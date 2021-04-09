@@ -1,6 +1,5 @@
 #! /bin/zsh 
-bindkey '^[[Z' reverse-menu-complete
-# neovim
+
 alias vvim="vim"
 alias vim="nvim"
 alias py="python3"
@@ -78,12 +77,3 @@ alias gd="git number diff"
 alias gr="git number reset"
 alias gs="git number"
 alias gu="git fetch && git number status" # git update
-#  ------------
-# | BAT CONFIG |
-#  ------------
-# essential for fzf previe to work properly
-export BAT_THEME="TwoDark"
-#  ----------
-# | SPECIALS |
-#  ----------
-alias shankar="python3 ~/Documents/Scripts/quotes_all.py"
