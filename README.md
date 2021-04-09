@@ -27,7 +27,8 @@ With `zshrc` I can open my `~/.zshrc` file from anywhere, and with `reload` I ca
 
 ## git shorthands
 
-For git, I use [git number](https://github.com/holygeek/git-number). Running `git number` on its own resembles running `git status`, but this time with numbers beside each listed file.
+For git, I use [git number](https://github.com/holygeek/git-number). Running `git number` on its own resembles running `git status`, but this time with numbers beside each listed file.   
+![asdf](https://user-images.githubusercontent.com/10664455/114206166-a6a1eb80-998d-11eb-985e-7d13aab21467.png)
 
 and so it's incorporated into my shorthands
 ```
