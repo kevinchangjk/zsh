@@ -10,7 +10,7 @@
 
 Running `mco <command>.sh` Takes a .sh file in the current folder and puts it into /usr/local/scripts, and then makes it executable.
 That way, you can call the command from anywhere
-```bash
+```
 mco script.sh
 ```
 
@@ -30,7 +30,6 @@ With `zshrc` I can open my `~/.zshrc` file from anywhere, and with `reload` I ca
 For git, I use [git number](https://github.com/holygeek/git-number). Running `git number` on its own resembles running `git status`, but this time with numbers beside each listed file.
 
 and so it's incorporated into my shorthands
-
 ```
 gs → git number
 
@@ -50,25 +49,21 @@ gu → git fetch && git status
 #### less-used but still essential operations
 
 Delete a local branch:
-
 ```
 gb -d <branch name>
 ```
 
 Delete a remote branch:
-
 ```
 git push origin --delete <branch name>
 ```
 
 A form of quickload (with last commit as quicksave):
-
 ```
 gco .
 ```
 
 Quickload, but just one file:
-
 ```
 gco <file name>
 ```
@@ -76,13 +71,11 @@ gco <file name>
 ## Navigating folders
 
 For ease of navigating folders in terminal, I use aliases for `cd <directory>` too.
-
 ```
 out → cd ..
 back → cd -
 home → cd ~/
 ```
-
 To jump to commonly used folders, I use `2` followed by a shorthand of my destination folder, sometimes simply the first letter of the folders leading up to that folder.
 ```
 2zsh → cd ~/Documents/Scripts/zsh/config
@@ -103,6 +96,7 @@ To jump to commonly used folders, I use `2` followed by a shorthand of my destin
 ```
 
 ## Path management
+
 This is just how I like do it:
 ```
 path+=('/usr/local/scripts')
@@ -113,11 +107,9 @@ path+=('/usr/local/opt/python/libexec/bin')
 
 ## Codeforces
 
-Every now and then I do some problem-solving on [codeforces](https://codeforces.com), and occasionally I take part in contests. For this, I like to be able to quickly test my code, instead of having to keep copying input from the website and pasting it into my terminal input.
+Sometimes I go on [codeforces](https://codeforces.com), and occasionally I take part in contests. This section helps to quickly test my code.
 
-I write my code in `<problem number>.py` or `<problem number>.cpp` (if my brute force isn't good enough) and save the input strings into `input_<problem number>.txt`.
-
-I then issue the following commands to (compile if necessary) and run the code, taking input from  `input_<problem number>.txt`.  
+I write code in `<problem number>.py` or `<problem number>.cpp`  and save the given input into `input_<problem number>.txt`, and then run them with
 ```
 cnr <problem numebr>.cpp
 pnr <problem number>.py
