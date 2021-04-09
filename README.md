@@ -115,9 +115,9 @@ path+=('/usr/local/opt/python/libexec/bin')
 
 Every now and then I do some problem-solving on [codeforces](https://codeforces.com), and occasionally I take part in contests. For this, I like to be able to quickly test my code, instead of having to keep copying input from the website and pasting it into my terminal input.
 
-I write my code in `<problem number>.py` or `<problem number>.cpp` (if my brute force isn't good enough) and save the input strings into `input_<probelm number>.txt`.
+I write my code in `<problem number>.py` or `<problem number>.cpp` (if my brute force isn't good enough) and save the input strings into `input_<problem number>.txt`.
 
-I then issue the following commands to (compile if necessary) and run the code, taking input from  `input_<probelm number>.txt`.  
+I then issue the following commands to (compile if necessary) and run the code, taking input from  `input_<problem number>.txt`.  
 ```
 cnr <problem numebr>.cpp
 pnr <problem number>.py
