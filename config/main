@@ -8,6 +8,7 @@ alias py="python3"
 # | EDITS |
 #  -------
 alias vvedit="nvim ~/.vim/vimrc"
+alias gedit="nvim ~/.gitconfig"
 alias vedit="nvim ~/.config/nvim/init.vim"
 alias tedit="nvim ~/.config/kitty/kitty.conf" # t for terminal
 alias ttedit="nvim ~/.config/kitty/kitty-themes/themes/Bright_Lights_Khang.conf"
