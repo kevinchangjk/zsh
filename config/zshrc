@@ -1,4 +1,7 @@
-LE_PROMPT='powerlevel10k'
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+LE_PROMPT='minimal'
 
 # where all my scripts at
 SAUCE="$HOME/Documents/Scripts/zsh/config"
@@ -31,4 +34,3 @@ done
 
 alias zshrc="nvim $SAUCE/zshrc"
 alias reload="source ~/.zshrc"
-
