@@ -1,0 +1,32 @@
+# currently it's just between 'pure' and 'powerlevel10k'
+LE_PROMPT=''
+
+# where all my scripts at
+SAUCE="$HOME/Documents/Scripts/zsh/config"
+
+# my own config files
+# load the prompt
+case $LE_PROMPT in
+    'pure')
+        script_list+=("$SAUCE/pure");;
+    'spaceship')
+        script_list+=("$SAUCE/spaceship");;
+    'hyper')
+        script_list+=("$SAUCE/hyper");;
+    'powerlevel10k')
+        script_list+=("$SAUCE/powerlevel10k")
+        ;;
+    *)
+        ;;
+esac
+script_list+=("$SAUCE/paths")
+script_list+=("$SAUCE/main")
+script_list+=("$SAUCE/math")
+script_list+=("$SAUCE/code")
+for file in $script_list[@]; do
+    source "$file"
+done
+
+alias zshrc="nvim $SAUCE/zshrc"
+alias reload="source ~/.zshrc"
+

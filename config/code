@@ -1,0 +1,25 @@
+#! /bin/zsh 
+alias 2code="cd ~/Github/codeforces"
+alias 2today="cd ~/Github/codeforces/today"
+# run c++
+function cnr() {
+    echo ------------
+    echo compiling...
+    input="$*"
+    g++ $input
+    echo running:
+    echo ------------
+    time (cnr_run $*)
+    rm a.out
+}
+function cnr_run() {
+    input="$*"
+    n=${input%.*}
+    ./a.out < input_$n.txt
+}
+# run python    
+function pnr() {
+    input="$*"
+    n=${input%.*}
+    time (python3 $n.py < input_$n.txt)
+}
