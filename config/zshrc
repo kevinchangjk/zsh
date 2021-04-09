@@ -1,4 +1,4 @@
-LE_PROMPT='mine'
+LE_PROMPT='minimal'
 
 # where all my scripts at
 SAUCE="$HOME/Documents/Scripts/zsh/config"
@@ -15,7 +15,7 @@ case $LE_PROMPT in
     'powerlevel10k')
         script_list+=("$SAUCE/powerlevel10k")
         ;;
-    'mine')
+    'minimal')
         script_list+=("$SAUCE/prompt")
         ;;
     *)
