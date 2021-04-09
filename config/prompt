@@ -1,0 +1,3 @@
+#! /bin/zsh
+PROMPT='%F{blue}%~%f 
+%(?.%F{green}➜%f.%F{red}¬%f) '

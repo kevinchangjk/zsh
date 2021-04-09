@@ -1,5 +1,4 @@
-# currently it's just between 'pure' and 'powerlevel10k'
-LE_PROMPT=''
+LE_PROMPT='mine'
 
 # where all my scripts at
 SAUCE="$HOME/Documents/Scripts/zsh/config"
@@ -15,6 +14,9 @@ case $LE_PROMPT in
         script_list+=("$SAUCE/hyper");;
     'powerlevel10k')
         script_list+=("$SAUCE/powerlevel10k")
+        ;;
+    'mine')
+        script_list+=("$SAUCE/prompt")
         ;;
     *)
         ;;
