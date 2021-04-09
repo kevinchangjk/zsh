@@ -1,4 +1,4 @@
-LE_PROMPT='minimal'
+LE_PROMPT='powerlevel10k'
 
 # where all my scripts at
 SAUCE="$HOME/Documents/Scripts/zsh/config"

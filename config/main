@@ -35,28 +35,29 @@ alias ls="lsd"
 alias ll="lsd --long"
 alias la="lsd --long -a"
 alias lt="lsd --tree"
-alias finder="open `pwd`"
+alias finder="open ."
 #  ------------
 # | NAVIGATION |
 #  ------------
 alias out="cd .."
 alias back="cd -"
-alias home="cd ~"
-alias 2bot="cd ~/Github/trading-bot"
-alias 2learn="cd ~/Desktop/learn"
-alias 2dn="cd ~/Desktop/notes"
-alias 2ds="cd ~/Documents/Scripts"
-alias 2dss="cd ~/Documents/Scripts/zsh/scripts"
+alias home="cd ~/"
+
 alias 2zsh="cd ~/Documents/Scripts/zsh/config"
 alias 2vim="cd ~/.config/nvim"
 alias 2qmk="cd ~/Github/qmk_firmware"
+
+alias 2bot="cd ~/Github/trading-bot"
+alias 2learn="cd ~/Desktop/learn"
 alias 2brew="cd ~/Github/brew-macOS"
+
 alias 2uls="cd /usr/local/scripts"
+alias 2dn="cd ~/Desktop/notes"
+alias 2ds="cd ~/Documents/Scripts"
+alias 2dzf="cd ~/Documents/Scripts/zsh/functions"
 #  ------------
 # | KEEB / QMK |
 #  ------------
-alias kedit="cd ~/Github/qmk_firmware && nvim ~/Github/qmk_firmware/keyboards/dz60/keymaps/khang/keymap.c"
-alias 2keeb="cd ~/Github/qmk_firmware/keyboards/dz60/keymaps/khang"
 alias mk="make dz60:khang"
 alias mkd="make dz60:khang:dfu"
 #  -----
@@ -70,19 +71,13 @@ alias gc="git commit"
 alias gcm="git commit -m"
 alias gca="git commit --amend -m"
 # delete with ```git branch -d feature```
-# delete remote with ```git push origin --delete feature```
+# delete branch's remote with ```git push origin --delete feature```
 alias gco="git number checkout"
 # add remote branch with ```git checkout --track origin/feature```
 alias gd="git number diff"
 alias gr="git number reset"
 alias gs="git number"
 alias gu="git fetch && git number status" # git update
-alias glink="git remote add origin" # followed by HTTPS
-# to revert a file to previous commit:
-alias gql="git number checkout " # followed by filename
-function gnb() {
-    git checkout --track origin/$1
-}
 #  ------------
 # | BAT CONFIG |
 #  ------------

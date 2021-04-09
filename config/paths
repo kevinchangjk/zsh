@@ -1,20 +1,16 @@
 #! /bin/zsh
-#  -------
-# | PATHS |
-#  -------
-eval "$(rbenv init -)"
+
 path+=('/usr/local/scripts')
 path+=('/usr/local/scripts/tikz2svg-master')
 path+=('/usr/local/Cellar/gcc@7')
 path+=('/usr/local/opt/python/libexec/bin')
-# path+=('/usr/local/opt/ruby/bin')
-# path+=('/usr/local/lib/ruby/gems/3.0.0/bin')
-# path+=('~/.gem/ruby/2.6.0/bin')
-# path+=('~/.gem/gems')
-if which ruby >/dev/null && which gem >/dev/null; then
-    PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
-fi
-export PATH
-# export PYTHONPATH="${PYTHONPATH}:/usr/local/Cellar/python3.9/*(om[1])/bin"
-export GEM_HOME="$HOME/.gem"
-export GEM_PATH="$HOME/.gem"
+
+# ruby stuff
+# eval "$(rbenv init -)"
+# if which ruby >/dev/null && which gem >/dev/null; then
+#     PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+# fi
+
+# gem stuff
+# export GEM_HOME="$HOME/.gem"
+# export GEM_PATH="$HOME/.gem"
