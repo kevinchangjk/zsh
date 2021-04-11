@@ -47,6 +47,7 @@ alias home="cd ~/"
 alias 2zsh="cd ~/Documents/Scripts/zsh/config"
 alias 2vim="cd ~/.config/nvim"
 alias 2qmk="cd ~/Github/qmk_firmware"
+alias 2kara="cd ~/.config/karabiner"
 
 alias 2bot="cd ~/Github/trading-bot"
 alias 2learn="cd ~/Desktop/learn"
