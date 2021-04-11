@@ -67,7 +67,7 @@ alias mkd="make dz60:khang:dfu"
 #  -----
 alias ga="git number add"
 alias gaa="git add ."
-alias gap="git add -p"
+alias gap="git number add -p"
 alias gb="git branch"
 alias gc="git commit"
 alias gcm="git commit -m"
