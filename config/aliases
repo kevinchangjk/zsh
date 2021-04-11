@@ -30,7 +30,9 @@ alias emails="nvim ~/Desktop/notes/emails\ and\ platforms.md"
 #  ----------
 # | TERMINAL |
 #  ----------
-alias ls="lsd"
+alias ls="tree -CL 1 --dirsfirst"
+alias ls2="tree -CL 2 --dirsfirst"
+alias la="tree -CLa 2 --dirsfirst"
 alias ll="lsd --long"
 alias la="lsd --long -a"
 alias lt="lsd --tree"
