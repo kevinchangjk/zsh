@@ -3,7 +3,7 @@ alias 2math="cd ~/Github/math"
 alias 2write="cd ~/Github/math/web/stage-1"
 alias 2tex="cd ~/Github/math/web/diagrams/tex"
 alias 2dt="cd ~/Desktop/tex_sandbox"
-alias write="2write && nvim write.html"
+alias write="nvim -S ~/.config/nvim/sessions/math"
 function ttikz() {
     time (tikz $1)
 }
