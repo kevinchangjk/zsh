@@ -1,0 +1,28 @@
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+LE_PROMPT='minimal'
+
+# where all my scripts at
+DOTS="$HOME/.config/zsh/dotfiles"
+REPOS="$HOME/repos"
+
+case $LE_PROMPT in
+    'pure') dot_list+=("$DOTS/pure");;
+    'spaceship') dot_list+=("$DOTS/spaceship");;
+    'powerlevel10k') dot_list+=("$DOTS/powerlevel10k") ;;
+    'minimal') dot_list+=("$DOTS/prompt") ;;
+    *) ;;
+esac
+dot_list+=("$DOTS/paths")
+dot_list+=("$DOTS/sets")
+dot_list+=("$DOTS/aliases")
+dot_list+=("$DOTS/math")
+dot_list+=("$DOTS/code")
+dot_list+=("$DOTS/specials")
+for file in $dot_list[@]; do
+    source "$file"
+done
+
+alias zshrc="nvim $DOTS/zshrc"
+alias reload="source ~/.zshrc"
