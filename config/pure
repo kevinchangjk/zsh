@@ -1,8 +1,0 @@
-#! /bin/zsh 
-fpath+=$HOME/.zsh/pure
-PURE_PROMPT_SYMBOL="➜"
-zstyle :prompt:pure:path color blue
-zstyle :prompt:pure:prompt:success color green
-zstyle :prompt:pure:prompt:error color red
-autoload -U promptinit; promptinit
-prompt pure
