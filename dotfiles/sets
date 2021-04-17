@@ -1,0 +1,5 @@
+#! /bin/zsh 
+# enables shift-tab to go to previous suggestion
+bindkey '^[[Z' reverse-menu-complete
+# essential for fzf preview to work properly
+export BAT_THEME="TwoDark"
