@@ -73,6 +73,7 @@ alias kedit="cd $REPOS/qmk_firmware && nvim $REPOS/qmk_firmware/keyboards/dz60/k
 #  -----
 alias ga="git number add"
 alias gaa="git add ."
+alias ga.="git add ."
 alias gap="git number add -p"
 alias gb="git branch"
 alias gc="git commit"
