@@ -23,3 +23,8 @@ function pnr() {
     n=${input%.*}
     time (python3 $n.py < input_$n.txt)
 }
+function problemset() {
+    diff=$1
+    url="https://codeforces.com/problemset?tags="$diff"-"$diff
+    open -a Safari $url
+}
