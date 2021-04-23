@@ -2,6 +2,7 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 LE_PROMPT='minimal'
+bindkey "^[[3~" delete-char
 
 # where all my scripts at
 DOTS="$HOME/.config/zsh/dotfiles"
@@ -26,3 +27,4 @@ done
 
 alias zshrc="nvim $DOTS/zshrc"
 alias reload="source ~/.zshrc"
+
