@@ -35,7 +35,7 @@ alias emails="nvim $REPOS/notes/emails\ and\ platforms.md"
 #  ----------
 # | TERMINAL |
 #  ----------
-alias ls="lsd"
+alias ls="lsd -a" # temporarily for efficiency
 alias la="lsd -a"
 alias lst="tree -CL 1 --dirsfirst"
 alias lstt="tree -CL 2 --dirsfirst"
@@ -52,6 +52,7 @@ alias back="cd -"
 alias home="cd ~/"
 
 alias rep="cd $REPOS"
+alias arc="cd $REPOS/arch"
 alias 2zsh="cd $DOTS"
 alias 2vim="cd ~/.config/nvim"
 alias 2qmk="cd $REPOS/qmk_firmware"
