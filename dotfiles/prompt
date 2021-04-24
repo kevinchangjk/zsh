@@ -14,4 +14,4 @@ function git_branch_name() {
 setopt prompt_subst
 
 PROMPT=$'%F{blue}%~ %F{241}$(git_branch_name)%f
-%(?.%F{green}\U279C%f.%F{red}\U00AC%f) '
+%(?.%F{green}→%f.%F{red}→%f) '
