@@ -16,7 +16,7 @@ alias vedit="nvim ~/.config/nvim/init.vim"
 alias tedit="nvim ~/.config/kitty/kitty.conf" # t for terminal
 alias ttedit="nvim ~/.config/kitty/kitty-themes/themes/Bright_Lights_Khang.conf"
 alias pedit="nvim ~/.p10k.zsh"
-# alias aedit="nvim ~/.config/alacritty/alacritty.yml"
+alias aedit="nvim ~/.config/alacritty/alacritty.yml"
 alias ledit="nvim ~/.config/lsd/config.yaml" # ls, ll, la manager
 #  ------------
 # | DISTILLERY |
