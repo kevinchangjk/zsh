@@ -9,6 +9,8 @@ alias yeet="printf '\033[2J\033[3J\033[1;1H'"
 # | EDITS |
 #  -------
 alias vvedit="nvim ~/.vim/vimrc"
+alias nedit="nvim ~/.xmonad/xmonad.hs"
+alias bedit="nvim ~/.xmobarrc"
 alias gedit="nvim ~/.gitconfig"
 alias vedit="nvim ~/.config/nvim/init.vim"
 alias tedit="nvim ~/.config/kitty/kitty.conf" # t for terminal
