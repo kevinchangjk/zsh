@@ -1,5 +1,6 @@
 #! /bin/zsh
 
+<<<<<<< HEAD
 function git_branch_name() {
     branch=$(git symbolic-ref HEAD 2> /dev/null | awk 'BEGIN{FS="/"} {print $NF}')
     if [[ $branch == "" ]];
@@ -8,10 +9,22 @@ function git_branch_name() {
     else
         # echo "⎇  $branch"
         echo "$branch"
+=======
+ARROW=" "
+
+function git_branch_name() {
+    branch=$(git symbolic-ref HEAD 2> /dev/null | awk 'BEGIN{FS="/"} {print $NF}')
+    if [[ $branch != "" ]]; then
+        echo ": $branch"
+>>>>>>> 83fdc5a (imported)
     fi
 }
 
 setopt prompt_subst
 
 PROMPT=$'%F{blue}%~ %F{241}$(git_branch_name)%f
+<<<<<<< HEAD
 %(?.%F{green}→%f.%F{red}→%f) '
+=======
+%(?.%F{green}$ARROW%f.%F{red}$ARROW%f)'
+>>>>>>> 83fdc5a (imported)
