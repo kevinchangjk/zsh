@@ -1,0 +1,115 @@
+#! /bin/zsh 
+
+alias fonts="fc-list : font family | grep"
+alias t="nvim $REPOS/notes/todo"
+alias f="find . -name"
+
+alias py="python3"
+# clear terminal
+alias yeet="printf '\033[2J\033[3J\033[1;1H'"
+alias snowball="nvim $REPOS/notes/stonks.md"
+#  ------------
+# | DISTILLERY |
+#  ------------
+alias hm="hugo --minify"
+#  ----------
+# | PERSONAL |
+#  ----------
+alias diary="cd $REPOS/notes && nvim 2021.md"
+alias emails="nvim $REPOS/notes/emails\ and\ platforms.md"
+#  ----------
+# | TERMINAL |
+#  ----------
+alias ls="lsd -a"
+alias ll="lsd --long -a"
+alias lt="lsd --tree --depth 2"
+#  ------------
+# | NAVIGATION |
+#  ------------
+alias out="cd .."
+alias back="cd -"
+alias home="cd ~/"
+
+alias rep="cd $REPOS"
+alias 2zsh="cd $DOTS"
+alias 2scripts="cd $DOTS && cd ../scripts"
+alias 2vim="cd ~/.config/nvim"
+alias 2qmk="cd $REPOS/qmk_firmware"
+alias 2n="cd $REPOS/notes"
+#  ------------
+# | KEEB / QMK |
+#  ------------
+alias mk="make dz60:khang"
+alias mkd="make dz60:khang:dfu"
+alias 2keeb="cd $REPOS/qmk_firmware/keyboards/dz60/keymaps/khang"
+alias kedit="cd $REPOS/qmk_firmware && nvim -S ~/.config/nvim/sessions/keeb"
+#  -----
+# | GIT |
+#  -----
+alias ga="git number add"
+alias gas="git submodule add"
+alias giti="nvim .gitignore"
+alias gitm="nvim .gitmodules"
+function gacm() {
+    git number add $1 && git commit -m $2
+}
+alias gl="git log --oneline --graph -n 10"
+alias gaa="git add --all"
+alias gau="git add -u"
+alias ga.="git add ."
+alias gap="git number add -p"
+alias gb="git branch"
+alias gc="git commit"
+alias gcm="git commit -m"
+alias gca="git commit --amend -m"
+alias gco="git number checkout"
+alias gd="git number diff"
+alias gr="git number reset"
+alias gs="git number"
+alias gp="git number -c nvim" # git preview
+alias gu="git fetch && git number status" # git update
+
+# delete branch with:
+# git branch -d <branch_name>
+#
+# delete branch's remote with:
+# git push origin -d <branch_name>
+#
+# add remote branch with:
+# git switch <branch_name>
+#
+# 
+# add (and clone) submodule with:
+# git submodule add <submodule_name> <opt: dir_name>
+# (this will also add a .gitmodule file)
+#
+# when cloning a repo containing submodules,
+# you will get the submodules' directories,
+# but they will be empty
+# so run these:
+# git submodule update --init
+#
+# and if these submodules has submodules of their own:
+# git submodule update --init --recursive
+#
+# to update submodules:
+# git submodule update --remote <submodule_name>
+#
+# change submodule's branch:
+# git config -f .gitmodules submodule.<submodule_name>.branch <branch_name>
+#
+# By default, the `git pull` command recursively fetches submodules changes, as we can see in the output of the first command above. However, it does not *update* the submodules.
+# to finalize the update, run:
+# git submodule update
+#
+# to remove a submodule completely:
+# 0. mv a/submodule a/submodule_tmp
+# 
+# 1. git submodule deinit -f -- a/submodule    
+# 2. rm -rf .git/modules/a/submodule
+# 3. git rm -f a/submodule
+# Note: a/submodule (no trailing slash)
+# 
+# or, if you want to leave it in your working tree and have done step 0
+# 3.   git rm --cached a/submodule
+# 3bis mv a/submodule_tmp a/submodule

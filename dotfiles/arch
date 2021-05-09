@@ -1,0 +1,47 @@
+#! /bin/zsh 
+alias cdisp="xrandr --output HDMI1 --above eDP1 --mode 1920x1080 && ~/.fehbg && xmonad --restart"
+alias a2="cd $REPOS/arch2"
+alias xr="xmonad --recompile"
+alias xrr="xmonad --recompile && xmonad --restart"
+alias arch="cd $REPOS/arch"
+alias atd="nvim ~/repos/arch/TODO"
+alias awm="nvim ~/.config/awesome/rc.lua"
+alias xmo="nvim -S ~/.config/nvim/sessions/xmo___"
+alias xmodt="nvim ~/Downloads/dt-xmonad.hs"
+alias nedit="nvim ~/.xmonad/xmonad.hs"
+alias bedit="nvim ~/.xmobarrc"
+alias xedit="nvim ~/.xinitrc"
+alias xredit="nvim ~/.Xresources"
+alias xorgedit="sudo nvim /etc/X11/xorg.conf.d/10-monitor.conf"
+function eventviewer() {
+     xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
+}
+alias setuparch="nvim $ARCH/manuals/setup-arch.md"
+
+# package management
+alias supm="sudo pacman"
+# remove orphan packages and their configs
+alias supmr="pacman -Qtdq | pacman -Rns -"
+alias arca="nvim ~/.config/zsh/dotfiles/arch"
+alias arci="nvim $ARCH/install.sh"
+#  ----------
+# | MOUNTING |
+#  ----------
+function mountblue() {
+    s=$(sudo fdisk -l | awk 'c&&!--c;/My Passport 0820/{c=8}')
+    prefix="/dev/"
+    s=${s#"$prefix"}
+    s=${s%% *}
+    echo $s
+    sudo mount /dev/$s /mnt/blue
+}
+function umountblue() {
+    sudo umount /mnt/blue
+}
+alias 2blue="cd /mnt/blue"
+alias dwmm="cd $REPOS/dwm && rm -f config.h && make && sudo make install clean"
+alias 2dwm="cd $REPOS/dwm"
+alias ldwm="startx ~/.xdwmrc"
+alias lxmo="startx ~/.xinitrc"
+alias lnrd="cd $REPOS/dwm && rm -f config.h && make && sudo make install clean && startx ~/.xdwmrc"
+alias dedit="nvim -S ~/.config/nvim/sessions/dwm"

@@ -1,0 +1,15 @@
+#! /bin/zsh
+
+path+=("$HOME/go/bin")
+path+=("$HOME/.local/bin")
+# path+=('$HOME/.cargo.bin')
+
+# ruby stuff
+# eval "$(rbenv init -)"
+# if which ruby >/dev/null && which gem >/dev/null; then
+#     PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+# fi
+
+# gem stuff
+# export GEM_HOME="$HOME/.gem"
+# export GEM_PATH="$HOME/.gem"

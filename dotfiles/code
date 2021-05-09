@@ -1,0 +1,30 @@
+#! /bin/zsh 
+alias 2code="cd $REPOS/codeforces"
+alias 2today="cd $REPOS/codeforces/today"
+# run c++
+function cnr() {
+    echo ------------
+    echo compiling...
+    input="$*"
+    g++ $input
+    echo running:
+    echo ------------
+    time (cnr_run $*)
+    rm a.out
+}
+function cnr_run() {
+    input="$*"
+    n=${input%.*}
+    ./a.out < input_$n.txt
+}
+# run python    
+function pnr() {
+    input="$*"
+    n=${input%.*}
+    time (python3 $n.py < input_$n.txt)
+}
+function problemset() {
+    diff=$1
+    url="https://codeforces.com/problemset?tags="$diff"-"$diff
+    open -a Safari $url
+}

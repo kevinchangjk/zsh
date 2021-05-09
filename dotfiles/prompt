@@ -1,0 +1,15 @@
+#! /bin/zsh
+
+ARROW=" "
+
+function git_branch_name() {
+    branch=$(git symbolic-ref HEAD 2> /dev/null | awk 'BEGIN{FS="/"} {print $NF}')
+    if [[ $branch != "" ]]; then
+        echo ": $branch"
+    fi
+}
+
+setopt prompt_subst
+
+PROMPT=$'%F{blue}%~ %F{241}$(git_branch_name)%f
+%(?.%F{green}$ARROW%f.%F{red}$ARROW%f)'
