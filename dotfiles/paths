@@ -1,9 +1,14 @@
 #! /bin/zsh
 
+<<<<<<< HEAD
 path+=('/usr/local/scripts')
 path+=('/usr/local/scripts/tikz2svg-master')
 path+=('/usr/local/Cellar/gcc@7')
 path+=('/usr/local/opt/python/libexec/bin')
+=======
+path+=("$HOME/go/bin")
+path+=("$HOME/.local/bin")
+>>>>>>> 83fdc5a (imported)
 # path+=('$HOME/.cargo.bin')
 
 # ruby stuff
