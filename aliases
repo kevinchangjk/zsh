@@ -47,7 +47,7 @@ alias kedit="cd $REPOS/qmk_firmware && nvim -S ~/.config/nvim/sessions/keeb"
 # | GIT |
 #  -----
 alias ga="git number add"
-alias gas="git submodule add"
+alias gsa="git submodule add"
 alias giti="nvim .gitignore"
 alias gitm="nvim .gitmodules"
 function gacm() {
@@ -94,6 +94,9 @@ alias gu="git fetch && git number status" # git update
 #
 # to update submodules:
 # git submodule update --remote <submodule_name>
+#
+# or, just run this when cloning:
+# git clone <repo> --recurse-submodules
 #
 # change submodule's branch:
 # git config -f .gitmodules submodule.<submodule_name>.branch <branch_name>
