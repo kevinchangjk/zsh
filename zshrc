@@ -1,23 +1,25 @@
 #! /bin/zsh 
 
-DOTS="$HOME/.config/zsh/dotfiles"
+DOTS="$HOME/repos/zsh"
 REPOS="$HOME/repos"
 ARCH="$HOME/repos/arch"
 ARCH_HOME="$ARCH/home"
 ARCH_DOTS="$ARCH/dotfiles"
 
-dot_list+=("$DOTS/arch")
-dot_list+=("$DOTS/exports")
-dot_list+=("$DOTS/paths")
-dot_list+=("$DOTS/prompt")
-dot_list+=("$DOTS/math")
-dot_list+=("$DOTS/code")
-dot_list+=("$DOTS/specials")
-dot_list+=("$DOTS/edits")
-dot_list+=("$DOTS/aliases")
+dot_list=(
+    arch
+    exports
+    paths
+    prompt
+    math
+    code
+    specials
+    edits
+    aliases
+    )
 
 for file in $dot_list[@]; do
-    source "$file"
+    source "$DOTS/$file"
 done
 
 alias zshrc="nvim $DOTS/zshrc"
