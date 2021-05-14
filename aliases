@@ -4,6 +4,7 @@ alias fonts="fc-list : font family | grep"
 alias t="nvim $REPOS/notes/todo"
 alias ct="cat $REPOS/notes/todo"
 alias f="find . -name"
+alias mon="while; do; clear; lt; sleep 1; done"
 
 alias py="python3"
 # clear terminal
@@ -32,9 +33,8 @@ alias back="cd -"
 alias home="cd ~/"
 
 alias rep="cd $REPOS"
-alias 2zsh="cd $DOTS"
-alias 2scripts="cd $DOTS && cd ../scripts"
-alias 2vim="cd ~/.config/nvim"
+alias 2zsh="cd $REPOS/zsh"
+alias 2vim="cd $REPOS/vim"
 alias 2qmk="cd $REPOS/qmk_firmware"
 alias 2n="cd $REPOS/notes"
 #  ------------
@@ -117,3 +117,17 @@ alias gu="git fetch && git number status" # git update
 # or, if you want to leave it in your working tree and have done step 0
 # 3.   git rm --cached a/submodule
 # 3bis mv a/submodule_tmp a/submodule
+function ags() {
+    CURRENT=$(pwd)
+    cd $REPOS
+    for d in */; do
+        if [[ -d $d.git ]]; then
+            echo ${CYAN}"----------------------------"${NORMAL}
+            cd $d
+            echo ${GREEN}"repo: "${d%"/"}${NORMAL}
+            git status
+            cd $REPOS
+        fi
+    done
+    cd $CURRENT
+}
