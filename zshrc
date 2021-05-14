@@ -1,10 +1,7 @@
 #! /bin/zsh 
 
-DOTS="$HOME/repos/zsh"
+ZSH_DOTS="$HOME/repos/zsh"
 REPOS="$HOME/repos"
-ARCH="$HOME/repos/arch"
-ARCH_HOME="$ARCH/home"
-ARCH_DOTS="$ARCH/dotfiles"
 
 dot_list=(
     arch
@@ -19,10 +16,10 @@ dot_list=(
     )
 
 for file in $dot_list[@]; do
-    source "$DOTS/$file"
+    source "$ZSH_DOTS/$file"
 done
 
-alias zshrc="nvim $DOTS/zshrc"
+alias zshrc="nvim $ZSH_DOTS/zshrc"
 alias reload="source ~/.zshrc"
 
 bindkey "^[[3~" delete-char
