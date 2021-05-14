@@ -2,6 +2,7 @@
 
 alias fonts="fc-list : font family | grep"
 alias t="nvim $REPOS/notes/todo"
+alias ct="cat $REPOS/notes/todo"
 alias f="find . -name"
 
 alias py="python3"
