@@ -16,14 +16,7 @@ alias xorgedit="sudo nvim /etc/X11/xorg.conf.d/10-monitor.conf"
 function eventviewer() {
      xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
 }
-alias setuparch="nvim $ARCH/manuals/setup-arch.md"
 
-# package management
-alias supm="sudo pacman"
-# remove orphan packages and their configs
-alias supmr="pacman -Qtdq | pacman -Rns -"
-alias arca="nvim ~/.config/zsh/dotfiles/arch"
-alias arci="nvim $ARCH/install.sh"
 #  ----------
 # | MOUNTING |
 #  ----------
@@ -39,9 +32,12 @@ function umountblue() {
     sudo umount /mnt/blue
 }
 alias 2blue="cd /mnt/blue"
+
+#  -----
+# | DWM |
+#  -----
 alias dwmm="cd $REPOS/dwm && rm -f config.h && make && sudo make install clean"
 alias 2dwm="cd $REPOS/dwm"
-alias ldwm="startx ~/.xdwmrc"
-alias lxmo="startx ~/.xinitrc"
-alias lnrd="cd $REPOS/dwm && rm -f config.h && make && sudo make install clean && cd ~ && startx ~/.xdwmrc"
+alias ldwm="startx"
+alias lnrd="cd $REPOS/dwm && rm -f config.h && make && sudo make install clean && cd ~ && startx"
 alias dedit="nvim -S ~/.config/nvim/sessions/dwm"
