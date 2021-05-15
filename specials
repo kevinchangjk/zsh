@@ -1,2 +1,0 @@
-#! /bin/zsh 
-alias shankar="python3 ~/Documents/Scripts/quotes_all.py"
