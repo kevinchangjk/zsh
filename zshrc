@@ -20,7 +20,6 @@ dot_list=(
     prompt
     math
     code
-    specials
     edits
     aliases
     )
@@ -34,9 +33,3 @@ alias reload="source ~/.zshrc"
 
 bindkey "^[[3~" delete-char
 bindkey '^[[Z' reverse-menu-complete
-# disables <Esc> from entering vi mode
-# bindkey -s '^[' ''
-# bindkey '^[[1;2D' beginning-of-line
-# bindkey '^[[1;2C' end-of-line
-# bindkey '^[[1;2B' backward-word
-# bindkey '^[[1;2A' forward-word
