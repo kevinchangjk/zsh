@@ -125,7 +125,7 @@ function ags() {
         if [[ -d $d.git ]]; then
             echo ${CYAN}"----------------------------"${NORMAL}
             cd $d
-            echo ${GREEN}"repo: "${d%"/"}${NORMAL}
+            echo -n ${GREEN}"repo: "${d%"/"} ${NORMAL}
             git status
             cd $REPOS
         fi
