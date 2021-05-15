@@ -69,6 +69,7 @@ alias gr="git number reset"
 alias gs="git number"
 alias gp="git number -c nvim" # git preview
 alias gu="git fetch && git number status" # git update
+alias gut="cd $REPOS/notes && git add todo && git commit -m 'update' && git push"
 
 # delete branch with:
 # git branch -d <branch_name>
