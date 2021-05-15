@@ -1,6 +1,5 @@
 #! /bin/zsh
 
-path+=("$HOME/go/bin")
 path+=("$HOME/.local/bin")
 # path+=('$HOME/.cargo.bin')
 
