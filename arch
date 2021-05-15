@@ -9,18 +9,24 @@ function eventviewer() {
 #  ----------
 # | MOUNTING |
 #  ----------
-function mountblue() {
-    s=$(sudo fdisk -l | awk 'c&&!--c;/My Passport 0820/{c=8}')
-    prefix="/dev/"
-    s=${s#"$prefix"}
-    s=${s%% *}
-    echo $s
-    sudo mount /dev/$s /mnt/blue
+function mountthe() {
+    sudo mkdir -p /mnt/$2
+    sudo mount $1 /mnt/$2 -o umask=000
+    MOUNTED=($(ls /mnt))
+    echo "Mounted drives:"
+    for i in ${MOUNTED[@]}; do
+        echo "* "$i
+    done
 }
-function umountblue() {
-    sudo umount /mnt/blue
+function umountthe() {
+    sudo umount /mnt/$1
+    sudo rmdir /mnt/$1
+    MOUNTED=($(ls /mnt))
+    echo "Mounted drives:"
+    for i in ${MOUNTED[@]}; do
+        echo "* "$i
+    done
 }
-alias 2blue="cd /mnt/blue"
 
 #  -----
 # | DWM |
