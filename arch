@@ -1,18 +1,7 @@
 #! /bin/zsh 
 alias cdisp="xrandr --output HDMI1 --above eDP1 --mode 1920x1080 && ~/.fehbg && xmonad --restart"
-alias a2="cd $REPOS/arch2"
-alias xr="xmonad --recompile"
-alias xrr="xmonad --recompile && xmonad --restart"
 alias arch="cd $REPOS/arch"
-alias atd="nvim ~/repos/arch/TODO"
-alias awm="nvim ~/.config/awesome/rc.lua"
-alias xmo="nvim -S ~/.config/nvim/sessions/xmo___"
-alias xmodt="nvim ~/Downloads/dt-xmonad.hs"
-alias nedit="nvim ~/.xmonad/xmonad.hs"
-alias bedit="nvim ~/.xmobarrc"
 alias xedit="nvim ~/.xinitrc"
-alias xredit="nvim ~/.Xresources"
-alias xorgedit="sudo nvim /etc/X11/xorg.conf.d/10-monitor.conf"
 function eventviewer() {
      xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
 }
