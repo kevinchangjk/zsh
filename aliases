@@ -33,6 +33,7 @@ alias back="cd -"
 alias home="cd ~/"
 
 alias rep="cd $REPOS"
+alias h2="cd $REPOS/h2ma"
 alias 2zsh="cd $REPOS/zsh"
 alias 2vim="cd $REPOS/vim"
 alias 2qmk="cd $REPOS/qmk_firmware"
