@@ -2,6 +2,7 @@
 alias 2math="cd $REPOS/math"
 alias 2write="cd $REPOS/math/web/stage-1"
 alias write="nvim -S ~/.config/nvim/sessions/math"
+alias nwrite="cd $REPOS/n3/pages && nvim meta.json ch*"
 function ttikz() {
     time (tikz $1)
 }
