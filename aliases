@@ -2,18 +2,15 @@
 
 alias fonts="fc-list : font family | grep"
 alias t="nvim $REPOS/notes/todo"
-alias ct="cat $REPOS/notes/todo"
+alias tt="cat $REPOS/notes/todo"
+alias dt="cd $REPOS/notes && git diff $REPOS/notes/todo"
 alias f="find . -name"
 alias mon="while; do; clear; lt; sleep 1; done"
 
 alias py="python3"
 # clear terminal
-alias yeet="printf '\033[2J\033[3J\033[1;1H'"
+alias ct="printf '\033[2J\033[3J\033[1;1H'"
 alias snowball="nvim $REPOS/notes/stonks.md"
-#  ------------
-# | DISTILLERY |
-#  ------------
-alias hm="hugo --minify"
 #  ----------
 # | PERSONAL |
 #  ----------
