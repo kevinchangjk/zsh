@@ -28,8 +28,8 @@ for file in $dot_list[@]; do
     source "$ZSH_DOTS/$file"
 done
 
-alias zshrc="nvim $ZSH_DOTS/zshrc"
-alias reload="source ~/.zshrc"
+alias z="nvim $ZSH_DOTS/zshrc"
+alias zr="source ~/.zshrc"
 
 bindkey "^[[3~" delete-char
 bindkey '^[[Z' reverse-menu-complete
