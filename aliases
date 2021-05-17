@@ -19,7 +19,7 @@ alias emails="nvim $REPOS/notes/emails\ and\ platforms.md"
 #  ----------
 # | TERMINAL |
 #  ----------
-alias ls="lsd -A"
+alias ls="lsd -A1"
 alias ll="lsd --long -A"
 alias lt="lsd -A --tree --depth 2"
 #  ------------
