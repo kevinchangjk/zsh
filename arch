@@ -56,3 +56,4 @@ alias lnrd="cd $REPOS/dwm && rm -f config.h && make && sudo make install clean &
 alias dedit="nvim -S ~/.config/nvim/sessions/dwm"
 alias bedit="nvim $REPOS/dwmblocks/blocks.def.h"
 alias dwmbm="cd $REPOS/dwmblocks && rm -f blocks.h && sudo make clean install"
+alias last20="expac --timefmt='%Y-%m-%d %T' '%l\t%n'|sort -n|tail -n 20"
