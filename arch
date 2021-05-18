@@ -1,5 +1,5 @@
 #! /bin/zsh 
-alias cdisp="xrandr --output HDMI1 --above eDP1 --mode 1920x1080 && ~/.fehbg && xmonad --restart"
+alias cdisp="xrandr --output HDMI1 --above eDP1 --mode 1920x1080 && ~/.fehbg"
 alias arch="cd $REPOS/arch"
 alias xedit="nvim ~/.xinitrc"
 function eventviewer() {
