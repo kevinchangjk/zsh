@@ -6,6 +6,7 @@ alias tt="cat $REPOS/notes/todo"
 alias dt="cd $REPOS/notes && git diff $REPOS/notes/todo"
 alias f="find . -name"
 alias mon="while; do; clear; lt; sleep 1; done"
+alias tc="xclip -selection clipboard <"
 
 alias py="python3"
 # clear terminal
