@@ -31,9 +31,9 @@ alias back="cd -"
 alias home="cd ~/"
 
 alias rep="cd $REPOS"
-alias 2zsh="cd $REPOS/zsh"
-alias 2vim="cd $REPOS/vim"
-alias 2qmk="cd $REPOS/qmk_firmware"
+alias 2z="cd $REPOS/zsh"
+alias 2v="cd $REPOS/vim"
+alias 2q="cd $REPOS/qmk_firmware"
 alias 2n="cd $REPOS/notes"
 #  ------------
 # | KEEB / QMK |
