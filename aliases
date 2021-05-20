@@ -20,9 +20,9 @@ alias emails="nvim $REPOS/notes/emails\ and\ platforms.md"
 #  ----------
 # | TERMINAL |
 #  ----------
-alias ls="lsd -A1"
-alias ll="lsd --long -A"
-alias lt="lsd -A --tree --depth 2"
+alias ls="lsd"
+alias ll="lsd --long"
+alias lt="lsd --tree --depth 2"
 #  ------------
 # | NAVIGATION |
 #  ------------
@@ -31,7 +31,6 @@ alias back="cd -"
 alias home="cd ~/"
 
 alias rep="cd $REPOS"
-alias h2="cd $REPOS/n3"
 alias 2zsh="cd $REPOS/zsh"
 alias 2vim="cd $REPOS/vim"
 alias 2qmk="cd $REPOS/qmk_firmware"
