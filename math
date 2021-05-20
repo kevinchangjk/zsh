@@ -1,7 +1,25 @@
 #! /bin/zsh 
-alias 2math="cd $REPOS/math"
-alias 2write="cd $REPOS/math/web/stage-1"
-alias write="nvim -S ~/.config/nvim/sessions/math"
+function ttt() {
+    [ "$1" ] && [ -z "${1//[0-9]}" ] && echo "is a number"
+}
+function h2() {
+    cd $REPOS/n3
+    [ "$1" ] && [ -z "${1//[0-9]}" ] && nvim $REPOS/n3/pages/ch$1.mdx && return
+    case $1 in
+        'c')
+            nvim $REPOS/n3/public/style.css;;
+        'a')
+            nvim $REPOS/n3/pages/_app.js;;
+        'p')
+            cd $REPOS/n3/pages;;
+        'd')
+            nvim $REPOS/n3/pages/_document.js;;
+        *);;
+    esac
+}
+function write() {
+    cd $REPOS/n3 && nvim pages/ch$1.mdx
+}
 alias nwrite="cd $REPOS/n3/pages && nvim meta.json ch*"
 function ttikz() {
     time (tikz $1)
