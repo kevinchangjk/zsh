@@ -1,34 +1,37 @@
 #! /bin/zsh
 
-function edit() {
+function ed() {
     case $1 in
-        'this')
+        '.')
             nvim $ZSH_DOTS/edits;;
-        'imwheel')
+        'dwmblocks'|'b') # bar
+            nvim $REPOS/dwmblocks/blocks.def.h;;
+        'dwm'|'d')
+            nvim -S ~/.config/nvim/sessions/dwm;;
+        'imwheel'|'i')
             nvim $REPOS/arch/settings/dotfiles/.imwheelrc;;
-        'dunst')
-            nvim $REPOS/arch/settings/.config/dunst/dunstrc;;
-        'kitty')
-            nvim $REPOS/arch/settings/.config/kitty/kitty.conf;;
-        'lsd')
-            nvim $REPOS/arch/settings/.config/lsd/config.yaml;;
-        'picom')
-            nvim $REPOS/arch/settings/.config/picom/picom.conf;;
-        'rofi')
-            nvim $REPOS/arch/settings/.config/rofi/config.rasi;;
-        'dwm')
-            nvim $REPOS/dwm/config.def.h;;
-        'git')
+        'git'|'g')
             nvim $HOME/.gitconfig;;
-        'nvim')
+        'keeb'|'k')
+            cd $REPOS/qmk_firmware && nvim keyboards/dz60/keymaps/khang/keymap.c;;
+        'lsd'|'l')
+            nvim $REPOS/arch/settings/.config/lsd/config.yaml;;
+        'dunst'|'n') # notifications
+            nvim $REPOS/arch/settings/.config/dunst/dunstrc;;
+        'picom'|'p')
+            nvim $REPOS/arch/settings/.config/picom/picom.conf;;
+        'rofi'|'r')
+            nvim $REPOS/arch/settings/.config/rofi/config.rasi;;
+        'kitty'|'t') # terminal
+            nvim $REPOS/arch/settings/.config/kitty/kitty.conf;;
+        'nvim'|'v') # vim
             nvim $REPOS/vim/init.vim;;
-        'keeb')
-            cd $REPOS/qmk_firmware
-            nvim $REPOS/qmk_firmware/keyboards/dz60/keymaps/khang/keymap.c;;
+        'xinit'|'x')
+            nvim $REPOS/arch/settings/dotfiles/.xinitrc;;
+        'zsh'|'z')
+            nvim $REPOS/zsh;;
+        'zsh'|'zz') # zsh's zshrc + all files in that dir, depth=1
+            nvim $REPOS/zsh/zshrc $REPOS/zsh/*(.);;
         *) echo "nothing happened.";;
     esac
 }
-alias redit="nvim ~/.config/ranger/rifle.conf"
-alias vedit="nvim ~/.config/nvim/init.vim"
-alias tedit="nvim ~/.config/kitty/kitty.conf" # t for terminal
-alias ledit="nvim ~/.config/lsd/config.yaml" # ls, ll, la manager
