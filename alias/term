@@ -1,0 +1,31 @@
+#! /bin/zsh
+
+alias ls="lsd"
+alias ll="lsd --long"
+alias lt="lsd --tree --depth 2"
+
+# clear terminal
+alias ct="printf '\033[2J\033[3J\033[1;1H'"
+
+# find
+alias f="find . | ag"
+
+# find root
+alias fr="sudo find / | ag"
+
+# montinor (current directory)
+alias mon="while; do; clear; lt; sleep 1; done"
+
+# to clipboard
+alias tc="xclip -selection clipboard <"
+
+# font-family
+alias fof="fc-list : font family | ag"
+
+# font-list
+alias fol="fc-list | ag"
+
+# monitors keystrokes
+function eventviewer() {
+     xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
+}

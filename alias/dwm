@@ -1,0 +1,13 @@
+#! /bin/zsh
+
+# dwm-make
+alias dwmm="cd $REPOS/dwm && rm -f config.h && make && sudo make install clean"
+
+# launch dwm
+alias ldwm="startx"
+
+# launch and run dwm (make and run)
+alias lnrd="cd $REPOS/dwm && rm -f config.h && make && sudo make install clean && cd ~ && startx"
+
+# dwmbar-make
+alias dwmbm="cd $REPOS/dwmblocks && rm -f blocks.h && sudo make clean install"

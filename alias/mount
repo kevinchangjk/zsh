@@ -1,14 +1,5 @@
-#! /bin/zsh 
-alias cdisp="xrandr --output HDMI1 --above eDP1 --mode 1920x1080 && ~/.fehbg"
-alias arch="cd $REPOS/arch"
-alias xedit="nvim ~/.xinitrc"
-function eventviewer() {
-     xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
-}
+#! /bin/zsh
 
-#  ----------
-# | MOUNTING |
-#  ----------
 function mountthe() {
     sudo mkdir -p /mnt/$2
     sudo mount $1 /mnt/$2 -o umask=000
@@ -38,22 +29,10 @@ function mountexfat() {
     done
     cd /mnt/$2
 }
-function listmounted() {
+function mountlist() {
     MOUNTED=($(ls /mnt))
     echo ${GREEN}"Mounted drives:"${NORMAL}
     for i in ${MOUNTED[@]}; do
         echo ${RED}"* "${NORMAL}$i
     done
 }
-
-#  -----
-# | DWM |
-#  -----
-alias dwmm="cd $REPOS/dwm && rm -f config.h && make && sudo make install clean"
-alias 2dwm="cd $REPOS/dwm"
-alias ldwm="startx"
-alias lnrd="cd $REPOS/dwm && rm -f config.h && make && sudo make install clean && cd ~ && startx"
-alias dedit="nvim -S ~/.config/nvim/sessions/dwm"
-alias bedit="nvim $REPOS/dwmblocks/blocks.def.h"
-alias dwmbm="cd $REPOS/dwmblocks && rm -f blocks.h && sudo make clean install"
-alias last20="expac --timefmt='%Y-%m-%d %T' '%l\t%n'|sort -n|tail -n 20"
