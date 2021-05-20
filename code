@@ -24,14 +24,17 @@ function cnr_run() {
     n=${input%.*}
     ./a.out < input_$n.txt
 }
+
 # run python    
 function pnr() {
     input="$*"
     n=${input%.*}
     time (python3 $n.py < input_$n.txt)
 }
+
+# USAGE: problemset [difficulty]
 function problemset() {
     diff=$1
     url="https://codeforces.com/problemset?tags="$diff"-"$diff
-    open -a Safari $url
+    firefox $url
 }
