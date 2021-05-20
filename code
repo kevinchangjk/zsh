@@ -1,7 +1,14 @@
 #! /bin/zsh 
-alias 2code="cd $REPOS/codeforces"
-alias 2today="cd $REPOS/codeforces/today"
-# run c++
+
+alias 2code="cd $REPOS/codeforces && rmdir --ignore-fail-on-non-empty */"
+function 2today() {
+    t=$(date +%Y-%m-%d)
+    cd $REPOS/codeforces && rmdir --ignore-fail-on-non-empty */
+    mkdir -p $t
+    cd $t
+}
+
+# compile and run c++
 function cnr() {
     echo ------------
     echo compiling...
