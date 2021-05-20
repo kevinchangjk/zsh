@@ -1,4 +1,6 @@
 #! /bin/zsh 
+
+alias debug="nvim -S ~/.config/nvim/sessions/debug"
 function ttt() {
     [ "$1" ] && [ -z "${1//[0-9]}" ] && echo "is a number"
 }
@@ -20,7 +22,6 @@ function h2() {
 function write() {
     cd $REPOS/n3 && nvim pages/ch$1.mdx
 }
-alias nwrite="cd $REPOS/n3/pages && nvim meta.json ch*"
 function ttikz() {
     time (tikz $1)
 }
