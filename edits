@@ -25,7 +25,7 @@ function ed() {
         'kitty'|'t') # terminal
             nvim $REPOS/arch/settings/.config/kitty/kitty.conf;;
         'nvim'|'v') # vim
-            nvim $REPOS/vim/init.vim;;
+            nvim $REPOS/neovim/init.vim;;
         'xinit'|'x')
             nvim $REPOS/arch/settings/dotfiles/.xinitrc;;
         'zsh'|'z')
