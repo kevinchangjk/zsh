@@ -2,6 +2,3 @@
 
 alias mk="make dz60:khang"
 alias mkd="make dz60:khang:dfu"
-
-alias kedit="cd $REPOS/qmk_firmware && nvim -S ~/.config/nvim/sessions/keeb"
-

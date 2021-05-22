@@ -1,27 +1,31 @@
 #! /bin/zsh 
 
-alias debug="nvim -S ~/.config/nvim/sessions/debug"
-function ttt() {
-    [ "$1" ] && [ -z "${1//[0-9]}" ] && echo "is a number"
-}
 function h2() {
     cd $REPOS/n3
     [ "$1" ] && [ -z "${1//[0-9]}" ] && nvim $REPOS/n3/pages/ch$1.mdx && return
     case $1 in
-        'c')
+        'c') # css
+            nvim $REPOS/n3/public/added.css;;
+        's')
             nvim $REPOS/n3/public/style.css;;
         'a')
             nvim $REPOS/n3/pages/_app.js;;
-        'p')
-            cd $REPOS/n3/pages;;
         'd')
             nvim $REPOS/n3/pages/_document.js;;
+        'p')
+            cd $REPOS/n3/pages;;
+        'm')
+            nvim $REPOS/n3/public/mathjax-config.js;;
+        'n')
+            cd $REPOS/n3/node_modules/nextra-theme-docs;;
+        'r')
+            cd $REPOS/n3 && yarn dev;;
         *);;
     esac
 }
-function write() {
-    cd $REPOS/n3 && nvim pages/ch$1.mdx
-}
+alias debug="nvim -S ~/.config/nvim/sessions/debug"
+
+# old tikz to svg functions
 function ttikz() {
     time (tikz $1)
 }
