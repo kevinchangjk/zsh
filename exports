@@ -6,4 +6,4 @@ export EDITOR=nvim
 export MANPAGER="nvim -c 'set ft=man' -"
 
 # essential for fzf preview to work properly
-export BAT_THEME="TwoDark"
+# export BAT_THEME="Nord"
