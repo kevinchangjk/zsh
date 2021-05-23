@@ -1,3 +1,8 @@
 #! /bin/zsh
 
 alias last20="expac --timefmt='%Y-%m-%d %T' '%l\t%n'|sort -n|tail -n 20"
+alias packbydate="expac --timefmt='%Y-%m-%d %T' '%l\t%n'|sort -n"
+# List unrequired packages
+# pacman -Qt
+# Full uninstall:
+# sudo pacman -Rnsu <package>
