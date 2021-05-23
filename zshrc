@@ -40,7 +40,6 @@ for file in $dot_list[@]; do
 done
 
 # key aliases
-alias z="nvim $ZSH_DOTS/zshrc"
 alias zr="source ~/.zshrc"
 
 # key key remaps
