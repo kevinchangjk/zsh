@@ -1,5 +1,12 @@
 #! /bin/zsh 
 
+alias gh="nvim $HOME/files/gnuplots/documentation"
+function test() {
+}
+function gnp() {
+    [ -f settings.gp ] || (echo "no settings.gp file" && return 1) &&
+    gnuplot -e "filename='$1'; load 'settings.gp'" $1
+}
 function h2() {
     cd $REPOS/n3
     [ "$1" ] && [ -z "${1//[0-9]}" ] && nvim $REPOS/n3/pages/ch$1.mdx && return
@@ -16,10 +23,14 @@ function h2() {
             cd $REPOS/n3/pages;;
         'm')
             nvim $REPOS/n3/public/mathjax-config.js;;
+        'g')
+            cd $REPOS/n3/plots;;
         'n')
             cd $REPOS/n3/node_modules/nextra-theme-docs;;
         'r')
             cd $REPOS/n3 && yarn dev;;
+        'v')
+            nvim -S ~/.config/nvim/sessions/math;;
         *);;
     esac
 }
