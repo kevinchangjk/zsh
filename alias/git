@@ -18,6 +18,18 @@ alias gr="git number reset"
 alias gs="git number" # git status
 alias gp="git number -c nvim" # git preview
 alias gu="git fetch && git number status" # git update
+function gt() {
+    tag_list=(
+        css
+        mdx
+        js
+        comp
+        )
+    [ "$1" = "e" ] && (nvim $REPOS/zsh/alias/git -c "/tag_list" && return) ||
+    (for i in ${tag_list[@]}; do
+        echo \[$i\]
+    done)
+}
 
 # all git statuses
 function ags() {
