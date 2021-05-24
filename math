@@ -17,18 +17,20 @@ function h2() {
             nvim $REPOS/n3/pages/_app.js;;
         'd')
             nvim $REPOS/n3/pages/_document.js;;
-        'p')
-            cd $REPOS/n3/pages;;
+        'i')
+            nvim $REPOS/n3/pages/index.mdx;;
         'm')
             nvim $REPOS/n3/public/mathjax-config.js;;
+        'v')
+            nvim -S ~/.config/nvim/sessions/math;;
+        'p')
+            cd $REPOS/n3/pages;;
         'g')
             cd $REPOS/n3/plots;;
         'n')
             cd $REPOS/n3/node_modules/nextra-theme-docs;;
         'r')
             cd $REPOS/n3 && yarn dev;;
-        'v')
-            nvim -S ~/.config/nvim/sessions/math;;
         '.')
             nvim $REPOS/zsh/math -c "/function h2";;
         *);;
