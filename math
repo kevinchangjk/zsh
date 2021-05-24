@@ -1,8 +1,6 @@
 #! /bin/zsh 
 
 alias gh="nvim $HOME/files/gnuplots/documentation"
-function test() {
-}
 function gnp() {
     [ -f settings.gp ] || (echo "no settings.gp file" && return 1) &&
     gnuplot -e "filename='$1'; load 'settings.gp'" $1
