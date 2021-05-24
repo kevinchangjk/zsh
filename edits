@@ -4,6 +4,8 @@ function ed() {
     case $1 in
         '.')
             nvim $ZSH_DOTS/edits;;
+        'alacritty'|'a') # bar
+            nvim $HOME/.config/alacritty/alacritty.yml;;
         'dwmblocks'|'b') # bar
             nvim $REPOS/dwmblocks/blocks.def.h;;
         'dwm'|'d')
