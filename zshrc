@@ -45,3 +45,6 @@ alias zr="source ~/.zshrc"
 # key key remaps
 bindkey "^[[3~" delete-char
 bindkey '^[[Z' reverse-menu-complete
+
+clear
+python "$ZSH_DOTS/quote/quotes.py"
