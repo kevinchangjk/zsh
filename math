@@ -29,6 +29,8 @@ function h2() {
             cd $REPOS/n3 && yarn dev;;
         'v')
             nvim -S ~/.config/nvim/sessions/math;;
+        '.')
+            nvim $REPOS/zsh/math -c "/function h2";;
         *);;
     esac
 }
