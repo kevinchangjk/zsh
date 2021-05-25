@@ -10,7 +10,7 @@ function h2() {
     [ "$1" ] && [ -z "${1//[0-9]}" ] && nvim $REPOS/n3/pages/ch$1.mdx && return
     case $1 in
         'c') # css
-            nvim $REPOS/n3/public/added.css;;
+            nvim -S $HOME/.config/nvim/sessions/h2_c;;
         's')
             nvim $REPOS/n3/public/style.css;;
         'a')
