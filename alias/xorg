@@ -1,3 +1,22 @@
 #! /bin/zsh
 
-alias cdisp="xrandr --output HDMI1 --above eDP1 --mode 1920x1080 && ~/.fehbg"
+function cdisp() {
+    xrandr --output HDMI1 --above eDP1 --mode 1920x1080
+    #   A----------------------
+    #   | HDMI1               |                       
+    #   | 1920x1080           |                       
+    #   |                     |                       
+    #   |                     |                       
+    #   |                     |                       
+    #   ----B------------------                       
+    #       | eDP1        |                           
+    #       | 1440x900    |                           
+    #       |             |                           
+    #       ---------------                           
+    xrandr --output HDMI1 --pos 0x0 --output eDP1 --pos 240x1080
+    ~/.fehbg
+}
+function ddisp() {
+    xrandr --output HDMI1 --off
+    ~/.fehbg
+}
