@@ -6,6 +6,7 @@ alias back="cd -"
 alias rep="cd $REPOS"
 
 alias 2a="cd $REPOS/arch"
+alias 2b="cd $REPOS/dwmblocks"
 alias 2d="cd $REPOS/dwm"
 alias 2n="cd $REPOS/notes"
 alias 2k="cd $REPOS/qmk_firmware/keyboards/dz60/keymaps/khang"
