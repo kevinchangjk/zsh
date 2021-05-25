@@ -4,9 +4,7 @@ ARROW=" "
 
 function git_branch_name() {
     branch=$(git symbolic-ref HEAD 2> /dev/null | awk 'BEGIN{FS="/"} {print $NF}')
-    if [[ $branch != "" ]]; then
-        echo ": $branch"
-    fi
+    [[ ! -z $branch ]] && echo " $branch"
 }
 
 setopt prompt_subst
