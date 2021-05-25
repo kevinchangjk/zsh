@@ -22,6 +22,9 @@ alias tc="xclip -selection clipboard <"
 # font-family
 alias fof="fc-list : font family | ag"
 
+# font-family styles
+alias fofs="fc-list : family : style | ag"
+
 # font-list
 alias fol="fc-list | ag"
 
