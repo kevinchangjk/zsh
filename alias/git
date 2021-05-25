@@ -37,15 +37,30 @@ function ags() {
     cd $REPOS
     for d in */; do
         if [[ -d $d.git ]]; then
-            echo ${CYAN}"----------------------------"${NORMAL}
             cd $d
-            echo -n ${GREEN}"repo: "${d%"/"} ${NORMAL}
-            git status
+            commitStatus=$(git status 2> /dev/null | ag "nothing to commit, working tree clean")
+            upToDate=$(git status 2> /dev/null | ag "Your branch is up to date with")
+            if [[ -z $commitStatus ]]; then
+                echo ${CYAN}"---"${NORMAL}
+                echo -n ${GREEN}"repo: "${d%"/"} ${NORMAL}
+                git status
+                cd $REPOS
+                unset commitStatus
+            fi
+            if [[ -z $upToDate ]]; then
+                echo ${CYAN}"---"${NORMAL}
+                echo -n ${GREEN}"repo: "${d%"/"} ${NORMAL}
+                git status
+                cd $REPOS
+                unset upToDate
+            fi
             cd $REPOS
+            unset commitStatus
+            unset upToDate
         fi
     done
     cd $CURRENT
-    echo ${CYAN}"----------------------------"${NORMAL}
+    echo ${CYAN}"---"${NORMAL}
 }
 
 # delete branch with:
