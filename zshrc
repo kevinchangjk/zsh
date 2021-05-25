@@ -1,5 +1,7 @@
 #! /bin/zsh 
 
+cd
+
 # key variables
 ZSH_DOTS="$HOME/repos/zsh"
 REPOS="$HOME/repos"
