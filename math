@@ -33,6 +33,7 @@ function h2() {
             cd $REPOS/n3 && yarn dev;;
         '.')
             nvim $REPOS/zsh/math -c "/function h2";;
+        '');;
         *)
             echo "nothing happened.";;
     esac
