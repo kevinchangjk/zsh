@@ -14,12 +14,15 @@ function ed() {
             nvim $REPOS/arch/settings/dotfiles/.imwheelrc;;
         'git'|'g')
             nvim $HOME/.gitconfig;;
+        'hosts'|'h')
+            nvim $REPOS/arch/settings/etc/hosts;;
         'keeb'|'k')
-            cd $REPOS/qmk_firmware && nvim keyboards/dz60/keymaps/khang/keymap.c;;
+            # cd $REPOS/qmk_firmware && nvim keyboards/dz60/keymaps/khang/keymap.c;;
+            cd $REPOS/qmk_firmware && nvim -S ~/.config/nvim/sessions/keeb;;
         'lsd'|'l')
             nvim $REPOS/arch/settings/.config/lsd/config.yaml;;
-        'dunst'|'n') # notifications
-            nvim $REPOS/arch/settings/.config/dunst/dunstrc;;
+        'navigation'|'n') # notifications
+            nvim $REPOS/zsh/alias/nav;;
         'picom'|'p')
             nvim $REPOS/arch/settings/.config/picom/picom.conf;;
         'rofi'|'r')
