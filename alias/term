@@ -1,16 +1,23 @@
 #! /bin/zsh
 
+# the modern ls
 alias ls="lsd"
 alias ll="lsd --long"
-alias lt="lsd --tree --depth 2"
+function lt() {
+    [ -z $1 ] && lsd --tree --depth 2 && return
+    [ "$1" ] && [ -z "${1//[0-9]}" ] && lsd --tree --depth $1 && return
+    if [ -d $1 ]; then
+        [ -z $2 ] && lsd --tree --depth 2 -- $1 && return
+        [ "$2" ] && [ -z "${2//[0-9]}" ] && lsd --tree --depth $2 -- $1 && return
+    fi
+}
+# alias lt="lsd --tree --depth 2"
 
 # clear terminal
 alias ct="printf '\033[2J\033[3J\033[1;1H'"
 
 # find
 alias f="find . | ag"
-
-# find root
 alias fr="sudo find / | ag"
 
 # montinor (current directory)
@@ -19,16 +26,10 @@ alias mon="while; do; clear; lt; sleep 1; done"
 # to clipboard
 alias tc="xclip -selection clipboard <"
 
-# font-family
+# fonts
 alias fof="fc-list : font family | ag"
-
-# font-family styles
 alias fofs="fc-list : family : style | ag"
-
-# font-list
 alias fol="fc-list | ag"
-
-# font (kitty)
 alias kf="kitty + list-fonts --psnames | ag"
 
 # monitors keystrokes
