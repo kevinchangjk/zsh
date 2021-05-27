@@ -28,6 +28,9 @@ alias fofs="fc-list : family : style | ag"
 # font-list
 alias fol="fc-list | ag"
 
+# font (kitty)
+alias kf="kitty + list-fonts --psnames | ag"
+
 # monitors keystrokes
 function eventviewer() {
      xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
