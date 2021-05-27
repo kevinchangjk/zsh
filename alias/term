@@ -11,7 +11,6 @@ function lt() {
         [ "$2" ] && [ -z "${2//[0-9]}" ] && lsd --tree --depth $2 -- $1 && return
     fi
 }
-# alias lt="lsd --tree --depth 2"
 
 # clear terminal
 alias ct="printf '\033[2J\033[3J\033[1;1H'"
@@ -28,7 +27,7 @@ alias tc="xclip -selection clipboard <"
 
 # fonts
 alias fof="fc-list : font family | ag"
-alias fofs="fc-list : family : style | ag"
+alias fofs="fc-list : family style | ag"
 alias fol="fc-list | ag"
 alias kf="kitty + list-fonts --psnames | ag"
 
