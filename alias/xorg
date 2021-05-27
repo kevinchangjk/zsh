@@ -20,3 +20,4 @@ function ddisp() {
     xrandr --output HDMI1 --off
     ~/.fehbg
 }
+alias lock="xsecurelock"
