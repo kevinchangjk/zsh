@@ -7,7 +7,17 @@ function gnp() {
 }
 function h2() {
     cd $REPOS/n3
-    [ "$1" ] && [ -z "${1//[0-9]}" ] && nvim $REPOS/n3/pages/ch$1.mdx && return
+    if [ -z "${1//[0-9]}" ]; then
+        open=()
+        for i in $@:
+            if [[ $i = *":" ]]; then
+                open+=("pages/ch${i%%:*}.mdx")
+            else
+                open+=("pages/ch$i.mdx")
+            fi
+        nvim $open
+        return
+    fi
     case $1 in
         'c') # css
             nvim -S $HOME/.config/nvim/sessions/h2_c;;
@@ -23,6 +33,8 @@ function h2() {
             nvim $REPOS/n3/public/mathjax-config.js;;
         'v')
             nvim -S ~/.config/nvim/sessions/math;;
+        'pr')
+            npx prettier --write -- pages components;;
         'p')
             cd $REPOS/n3/pages;;
         'g')
