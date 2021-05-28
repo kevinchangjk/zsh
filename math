@@ -7,7 +7,7 @@ function gnp() {
 }
 function h2() {
     cd $REPOS/n3
-    if [ -z "${1//[0-9]}" ]; then
+    [ "$1" ] && if [ -z "${1//[0-9]}" ]; then
         open=()
         for i in $@:
             if [[ $i = *":" ]]; then
