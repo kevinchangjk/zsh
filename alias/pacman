@@ -5,6 +5,7 @@ alias pbd="expac --timefmt='%Y-%m-%d %T' '%l\t%n'|sort -n"
 function pbs() {
     pacman -Qi | awk '/^Name/{name=$3} /^Installed Size/{print $4$5, name}' | sort -h
 }
+alias Qie="nvim $REPOS/arch/packages/packtags.json"
 # List unrequired packages
 # pacman -Qt
 # Full uninstall:
