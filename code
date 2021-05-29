@@ -20,16 +20,20 @@ function cnr() {
     rm a.out
 }
 function cnr_run() {
-    input="$*"
-    n=${input%.*}
-    ./a.out < input_$n.txt
+	input="$*"
+	n=${input%.*}
+	if [[ -f input_$n.txt ]]; then
+		./a.out < input_$n.txt
+	else
+		./a.out
+	fi
 }
 
 # run python    
 function pnr() {
     input="$*"
     n=${input%.*}
-    time (python3 $n.py < input_$n.txt)
+    time (python $n.py < input_$n.txt)
 }
 
 # USAGE: problemset [difficulty]
