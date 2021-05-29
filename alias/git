@@ -17,6 +17,7 @@ alias gd="git number diff"
 alias gr="git number reset"
 alias gs="git number" # git status
 alias gp="git number -c nvim" # git preview
+alias gms="git merge --squash" # squash diff into one commit
 alias gu="git fetch && git number status" # git update
 function gt() {
     tag_list=(
