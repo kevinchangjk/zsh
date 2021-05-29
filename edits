@@ -31,6 +31,10 @@ function ed() {
             nvim $REPOS/arch/settings/.config/kitty/kitty.conf;;
         'nvim'|'v') # vim
             nvim $REPOS/neovim/init.vim;;
+        'vs') # vim
+            nvim $REPOS/neovim/sets.vim;;
+        'vc') # vim
+            nvim $REPOS/neovim/onedark.colorway.vim;;
         'xinit'|'x')
             nvim $REPOS/arch/settings/dotfiles/.xinitrc;;
         'zsh'|'z')
