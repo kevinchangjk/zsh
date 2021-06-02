@@ -3,7 +3,15 @@
 alias ga="git number add"
 alias giti="nvim .gitignore"
 alias gitm="nvim .gitmodules"
-alias gl="git log --oneline --graph -n 10"
+function gl() {
+	[ "$1" ] && if [ -z "${1//[0-9]}" ]; then
+		echo "git log --oneline --graph -n $1"
+		git log --oneline --graph -n $1
+	else
+		git log --oneline --graph -n 10
+	fi
+
+}
 alias gaa="git add --all"
 alias gau="git add -u"
 alias ga.="git add ."
