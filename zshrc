@@ -5,6 +5,7 @@ cd
 # key variables
 ZSH_DOTS="$HOME/repos/zsh"
 REPOS="$HOME/repos"
+VIM="nvim"
 
 # colors
 NORMAL="\e[1;0m"

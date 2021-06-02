@@ -37,4 +37,4 @@ function eventviewer() {
 }
 
 # quick load vim
-alias v="nvim -S ~/.config/nvim/sessions/v"
+alias v="$VIM -S ~/.config/nvim/sessions/v"

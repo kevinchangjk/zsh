@@ -1,6 +1,6 @@
 #! /bin/zsh 
 
-alias gh="nvim $HOME/files/gnuplots/documentation"
+alias gh="$VIM $HOME/files/gnuplots/documentation"
 function gnp() {
     [ -f settings.gp ] || (echo "no settings.gp file" && return 1) &&
     gnuplot -e "filename='$1'; load 'settings.gp'" $1
@@ -15,24 +15,24 @@ function h2() {
             else
                 open+=("pages/ch$i.mdx")
             fi
-        nvim $open
+        $VIM $open
         return
     fi
     case $1 in
         'c') # css
-            nvim -S $HOME/.config/nvim/sessions/h2_c;;
+            $VIM -S $HOME/.config/nvim/sessions/h2_c;;
         's')
-            nvim $REPOS/n3/public/style.css;;
+            $VIM $REPOS/n3/public/style.css;;
         'a')
-            nvim $REPOS/n3/pages/_app.js;;
+            $VIM $REPOS/n3/pages/_app.js;;
         'd')
-            nvim $REPOS/n3/pages/_document.js;;
+            $VIM $REPOS/n3/pages/_document.js;;
         'i')
-            nvim $REPOS/n3/pages/index.mdx;;
+            $VIM $REPOS/n3/pages/index.mdx;;
         'm')
-            nvim $REPOS/n3/public/mathjax-config.js;;
+            $VIM $REPOS/n3/public/mathjax-config.js;;
         'v')
-            nvim -S ~/.config/nvim/sessions/math;;
+            $VIM -S ~/.config/nvim/sessions/math;;
         'pr')
             npx prettier --write -- pages components;;
         'p')
@@ -44,13 +44,13 @@ function h2() {
         'r')
             cd $REPOS/n3 && yarn dev;;
         '.')
-            nvim $REPOS/zsh/math -c "/function h2";;
+            $VIM $REPOS/zsh/math -c "/function h2";;
         '');;
         *)
             echo "nothing happened.";;
     esac
 }
-alias debug="nvim -S ~/.config/nvim/sessions/debug"
+alias debug="$VIM -S ~/.config/nvim/sessions/debug"
 
 # old tikz to svg functions
 function ttikz() {

@@ -1,8 +1,8 @@
 #! /bin/zsh
 
 alias ga="git number add"
-alias giti="nvim .gitignore"
-alias gitm="nvim .gitmodules"
+alias giti="$VIM .gitignore"
+alias gitm="$VIM .gitmodules"
 function gl() {
 	if [ "$1" ]; then
 		[ -z "${1//[0-9]}" ] && git log --oneline --graph -n $1
@@ -23,7 +23,7 @@ alias gco="git number checkout"
 alias gd="git number diff"
 alias gr="git number reset"
 alias gs="git number" # git status
-alias gp="git number -c nvim" # git preview
+alias gp="git number -c $VIM" # git preview
 alias gms="git merge --squash" # squash diff into one commit
 alias gu="git fetch && git number status" # git update
 function gt() {
@@ -33,7 +33,7 @@ function gt() {
         js
         comp
         )
-    [ "$1" = "e" ] && (nvim $REPOS/zsh/alias/git -c "/tag_list" && return) ||
+    [ "$1" = "e" ] && ($VIM $REPOS/zsh/alias/git -c "/tag_list" && return) ||
     (for i in ${tag_list[@]}; do
         echo \[$i\]
     done)

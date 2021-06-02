@@ -2,8 +2,8 @@
 
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-export EDITOR=nvim
-export MANPAGER="nvim -c 'set ft=man' -"
+export EDITOR=$VIM
+export MANPAGER="$VIM -c 'set ft=man' -"
 
 # for alacritty DPI settings
 export WINIT_X11_SCALE_FACTOR=1
