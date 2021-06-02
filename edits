@@ -3,44 +3,46 @@
 function ed() {
     case $1 in
         '.')
-            nvim $ZSH_DOTS/edits;;
+            $VIM $ZSH_DOTS/edits;;
         'alacritty'|'a') # bar
-            nvim $HOME/.config/alacritty/alacritty.yml;;
+            $VIM $HOME/.config/alacritty/alacritty.yml;;
         'dwmblocks'|'b') # bar
-            nvim $REPOS/dwmblocks/blocks.def.h;;
+            $VIM $REPOS/dwmblocks/blocks.def.h;;
         'dwm'|'d')
-            nvim -S ~/.config/nvim/sessions/dwm;;
+            $VIM -S ~/.config/nvim/sessions/dwm;;
         'imwheel'|'i')
-            nvim $REPOS/arch/settings/dotfiles/.imwheelrc;;
+            $VIM $REPOS/arch/settings/dotfiles/.imwheelrc;;
+        'firefox'|'f')
+            $VIM $HOME/.mozilla/firefox/eg18esvc.default-release/chrome/userChrome.css;;
         'git'|'g')
-            nvim $HOME/.gitconfig;;
+            $VIM $HOME/.gitconfig;;
         'hosts'|'h')
-            nvim $REPOS/arch/settings/etc/hosts;;
+            $VIM $REPOS/arch/settings/etc/hosts;;
         'keeb'|'k')
             # cd $REPOS/qmk_firmware && nvim keyboards/dz60/keymaps/khang/keymap.c;;
-            cd $REPOS/qmk_firmware && nvim -S ~/.config/nvim/sessions/keeb;;
+            cd $REPOS/qmk_firmware && $VIM -S ~/.config/nvim/sessions/keeb;;
         'lsd'|'l')
-            nvim $REPOS/arch/settings/.config/lsd/config.yaml;;
+            $VIM $REPOS/arch/settings/.config/lsd/config.yaml;;
         'navigation'|'n') # notifications
-            nvim $REPOS/zsh/alias/nav;;
+            $VIM $REPOS/zsh/alias/nav;;
         'picom'|'p')
-            nvim $REPOS/arch/settings/.config/picom/picom.conf;;
+            $VIM $REPOS/arch/settings/.config/picom/picom.conf;;
         'rofi'|'r')
-            nvim $REPOS/arch/settings/.config/rofi/config.rasi;;
+            $VIM $REPOS/arch/settings/.config/rofi/config.rasi;;
         'kitty'|'t') # terminal
-            nvim $REPOS/arch/settings/.config/kitty/kitty.conf;;
-        'nvim'|'v') # vim
-            nvim $REPOS/neovim/init.vim;;
+            $VIM $REPOS/arch/settings/.config/kitty/kitty.conf;;
+        'nvim'|'vim'|'v') # vim
+            $VIM $REPOS/neovim/init.vim;;
         'vs') # vim
-            nvim $REPOS/neovim/sets.vim;;
+            $VIM $REPOS/neovim/sets.vim;;
         'vc') # vim
-            nvim $REPOS/neovim/onedark.colorway.vim;;
+            $VIM $REPOS/neovim/onedark.colorway.vim;;
         'xinit'|'x')
-            nvim $REPOS/arch/settings/dotfiles/.xinitrc;;
+            $VIM $REPOS/arch/settings/dotfiles/.xinitrc;;
         'zsh'|'z')
-            nvim $REPOS/zsh;;
+            $VIM $REPOS/zsh;;
         'zsh'|'zz') # zsh's zshrc + all files in that dir, depth=1
-            nvim $REPOS/zsh/zshrc $REPOS/zsh/*(.);;
+            $VIM $REPOS/zsh/zshrc $REPOS/zsh/*(.);;
         *) echo "nothing happened.";;
     esac
 }
