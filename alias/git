@@ -4,9 +4,8 @@ alias ga="git number add"
 alias giti="nvim .gitignore"
 alias gitm="nvim .gitmodules"
 function gl() {
-	[ "$1" ] && if [ -z "${1//[0-9]}" ]; then
-		echo "git log --oneline --graph -n $1"
-		git log --oneline --graph -n $1
+	if [ "$1" ]; then
+		[ -z "${1//[0-9]}" ] && git log --oneline --graph -n $1
 	else
 		git log --oneline --graph -n 10
 	fi
