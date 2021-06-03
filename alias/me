@@ -1,13 +1,13 @@
 #! /bin/zsh
 
-alias diary="cd $REPOS/notes && $VIM 2021.md"
-alias emails="$VIM $REPOS/notes/emails\ and\ platforms.md"
-
-alias t="$VIM $REPOS/notes/todo.md"
-alias tt="cat $REPOS/notes/todo.md"
-alias dt="cd $REPOS/notes && git diff $REPOS/notes/todo.md"
-alias gut="cd $REPOS/notes && git add todo.md && git commit -m 'update' && git push" # git update todo
+NOTES="$REPOS/notes"
+alias nn="$VIM $NOTES/posts"
+alias n="$VIM $NOTES/posts/.inbox.md"
+alias t="$VIM $NOTES/todo.md"
+alias tt="cat $NOTES/todo.md"
+alias dt="cd $NOTES && git diff $NOTES/todo.md"
+alias gut="cd $NOTES && git add todo.md && git commit -m 'update' && git push" # git update todo
 
 alias py="python3"
-alias snowball="$VIM $REPOS/notes/stonks.md"
+alias snowball="$VIM $NOTES/stonks.md"
 
