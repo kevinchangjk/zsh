@@ -1,7 +1,6 @@
 #! /bin/zsh
 
 function cdisp() {
-    xrandr --output HDMI1 --above eDP1 --mode 1920x1080
     #   A----------------------
     #   | HDMI1               |                       
     #   | 1920x1080           |                       
@@ -13,7 +12,21 @@ function cdisp() {
     #       | 1440x900    |                           
     #       |             |                           
     #       ---------------                           
-    xrandr --output HDMI1 --pos 0x0 --output eDP1 --pos 240x1080
+    xrandr --output HDMI1 --mode 1920x1080 --pos 0x0 --output eDP1 --pos 240x1080
+    #                       A----------------------      
+    #                       | HDMI1               |   
+    #                       | 1920x1080           |   
+    #                       |                     |   
+    #         B--------------                     |   
+    #         | eDP1        |                     |   
+    #         | 1440x900    |----------------------   
+    #         |             |                         
+    #         ---------------                         
+    # xrandr --output HDMI1 --mode 1920x1080 --pos 1440x0 --output eDP1 --pos 0x800
+    ~/.fehbg
+}
+function rdisp() {
+    xrandr --output HDMI1 --rotate right --mode 1920x1080 --pos 180x0 --output eDP1 --pos 0x1920
     ~/.fehbg
 }
 function ddisp() {
