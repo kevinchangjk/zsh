@@ -6,7 +6,7 @@ function gnp() {
     gnuplot -e "filename='$1'; load 'settings.gp'" $1
 }
 function h() {
-	$VIM -S ~/.config/nvim/sessions/m
+	$VIM -S ~/.config/nvim/sessions/h
 }
 function h2() {
     cd $REPOS/n3
@@ -22,8 +22,6 @@ function h2() {
         return
     fi
     case $1 in
-        'c') # css
-            $VIM -S $HOME/.config/nvim/sessions/h2_c;;
         's')
             $VIM $REPOS/n3/public/style.css;;
         'a')
