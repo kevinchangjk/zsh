@@ -3,9 +3,13 @@
 alias last20="expac --timefmt='%Y-%m-%d %T' '%l\t%n'|sort -n|tail -n 20"
 alias pbd="expac --timefmt='%Y-%m-%d %T' '%l\t%n'|sort -n"
 function pbs() {
-    pacman -Qi | awk '/^Name/{name=$3} /^Installed Size/{print $4$5, name}' | sort -h
+  pacman -Qi | awk '/^Name/{name=$3} /^Installed Size/{print $4$5, name}' | sort -h
 }
 alias Qie="$VIM $REPOS/arch/packages/packtags.json"
+function Qir() {
+	cd $REPOS/arch/packages
+  ./regen.sh
+}
 alias pqi="pacman -Qi"
 # List unrequired packages
 # pacman -Qt
