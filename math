@@ -1,16 +1,18 @@
 #! /bin/zsh 
 
+MATH="$REPOS/n3"
+
 alias gh="$VIM $HOME/files/gnuplots/documentation"
 function gnp() {
     [ -f settings.gp ] || (echo "no settings.gp file" && return 1) &&
     gnuplot -e "filename='$1'; load 'settings.gp'" $1
 }
 function h() {
-	cd $REPOS/n3
+	cd $MATH
 	$VIM -S ~/.config/nvim/sessions/h
 }
 function h2() {
-    cd $REPOS/n3
+    cd $MATH
     [ "$1" ] && if [ -z "${1//[0-9]}" ]; then
         open=()
         for i in $@:
@@ -24,27 +26,27 @@ function h2() {
     fi
     case $1 in
         's')
-            $VIM $REPOS/n3/public/style.css;;
+            $VIM $MATH/public/style.css;;
         'a')
-            $VIM $REPOS/n3/pages/_app.js;;
+            $VIM $MATH/pages/_app.js;;
         'd')
-            $VIM $REPOS/n3/pages/_document.js;;
+            $VIM $MATH/pages/_document.js;;
         'i')
-            $VIM $REPOS/n3/pages/index.mdx;;
+            $VIM $MATH/pages/index.mdx;;
         'm')
-            $VIM $REPOS/n3/public/mathjax-config.js;;
+            $VIM $MATH/public/mathjax-config.js;;
         'v')
             $VIM -S ~/.config/nvim/sessions/math;;
         'pr')
             npx prettier --write -- pages components;;
         'p')
-            cd $REPOS/n3/pages;;
+            cd $MATH/pages;;
         'g')
-            cd $REPOS/n3/plots;;
+            cd $MATH/plots;;
         'n')
-            cd $REPOS/n3/node_modules/nextra-theme-docs;;
+            cd $MATH/node_modules/nextra-theme-docs;;
         'r')
-            cd $REPOS/n3 && yarn dev;;
+            cd $MATH && yarn dev;;
         '.')
             $VIM $REPOS/zsh/math -c "/function h2";;
         '');;
