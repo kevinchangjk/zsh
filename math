@@ -6,6 +6,7 @@ function gnp() {
     gnuplot -e "filename='$1'; load 'settings.gp'" $1
 }
 function h() {
+	cd $REPOS/n3
 	$VIM -S ~/.config/nvim/sessions/h
 }
 function h2() {
