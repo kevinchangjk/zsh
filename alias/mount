@@ -11,7 +11,7 @@ function mountthe() {
     cd /mnt/$2
 }
 function umountthe() {
-    sudo umount /mnt/$1
+    sudo umount -l /mnt/$1
     sudo rmdir /mnt/$1
     MOUNTED=($(ls /mnt))
     echo ${GREEN}"Mounted drives:"${NORMAL}
