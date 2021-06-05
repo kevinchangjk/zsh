@@ -10,4 +10,3 @@ alias gut="cd $NOTES && git add todo.md && git commit -m 'update' && git push" #
 
 alias py="python3"
 alias snowball="$VIM $NOTES/stonks.md"
-
