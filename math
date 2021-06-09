@@ -42,7 +42,7 @@ function h2() {
         'p')
             cd $MATH/pages;;
         'g')
-            cd $MATH/plots;;
+            cd $MATH/components/plots;;
         'n')
             cd $MATH/node_modules/nextra-theme-docs;;
         'r')
