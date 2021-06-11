@@ -41,6 +41,8 @@ function h2() {
             npx prettier --write -- pages components;;
         'p')
             cd $MATH/pages;;
+        'c')
+            cd $MATH/components;;
         'g')
             cd $MATH/components/plots;;
         'n')
