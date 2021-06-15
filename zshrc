@@ -28,6 +28,7 @@ dot_list=(
     edits
     alias/dwm
     alias/git
+    alias/firefox
     alias/keeb
     alias/me
     alias/mount
