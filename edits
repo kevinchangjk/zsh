@@ -10,6 +10,8 @@ function ed() {
             $VIM $REPOS/dwmblocks/blocks.def.h;;
         'dwm'|'d')
             $VIM -S ~/.config/nvim/sessions/dwm;;
+        'dunst')
+            $VIM ~/.config/dunst/dunstrc;;
         'imwheel'|'i')
             $VIM $REPOS/arch/settings/dotfiles/.imwheelrc;;
         'firefox'|'f')
@@ -23,7 +25,7 @@ function ed() {
             cd $REPOS/qmk_firmware && $VIM -S ~/.config/nvim/sessions/keeb;;
         'lsd'|'l')
             $VIM $REPOS/arch/settings/.config/lsd/config.yaml;;
-        'navigation'|'n') # notifications
+        'navigation'|'n')
             $VIM $REPOS/zsh/alias/nav;;
         'picom'|'p')
             $VIM $REPOS/arch/settings/.config/picom/picom.conf;;
