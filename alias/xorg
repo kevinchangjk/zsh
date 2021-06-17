@@ -33,4 +33,8 @@ function ddisp() {
     xrandr --output HDMI1 --off
     ~/.fehbg
 }
+function edisp() {
+    xrandr --output eDP1 --off --output HDMI1 --mode 1920x1080 --pos 0x0
+    ~/.fehbg
+}
 alias lock="xsecurelock"
