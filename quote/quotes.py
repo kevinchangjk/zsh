@@ -1,11 +1,11 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 import json
 import textwrap
 import subprocess
 import random
 import os
 
-f = open('repos/zsh/quote/quotes.json','r')
+f = open('/Users/khang/repos/zsh/quote/quotes.json','r')
 data = json.load(f)
 tput = str(subprocess.check_output(['tput','cols']))
 width = int(tput.split("\'")[1].split("\\")[0]) - 4
