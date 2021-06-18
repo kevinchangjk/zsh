@@ -47,8 +47,10 @@ function ed() {
             $VIM ~/.config/yabai/yabairc;;
         'zsh'|'z')
             $VIM $REPOS/zsh;;
-        'zsh'|'zz') # zsh's zshrc + all files in that dir, depth=1
-            $VIM $REPOS/zsh/zshrc $REPOS/zsh/*(.);;
+        'zshrc'|'zp') 
+            $VIM $REPOS/zsh/prompt;;
+        'zshrc'|'zz') # zsh's zshrc
+            $VIM $REPOS/zsh/zshrc;;
         *) echo "nothing happened.";;
     esac
 }
