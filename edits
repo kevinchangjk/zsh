@@ -31,6 +31,8 @@ function ed() {
             $VIM $REPOS/arch/settings/.config/picom/picom.conf;;
         'rofi'|'r')
             $VIM $REPOS/arch/settings/.config/rofi/config.rasi;;
+        'skhd'|'s')
+            $VIM ~/.config/skhd/skhdrc;;
         'kitty'|'t') # terminal
             $VIM $REPOS/arch/settings/.config/kitty/kitty.conf;;
         'nvim'|'vim'|'v') # vim
@@ -41,6 +43,8 @@ function ed() {
             $VIM $REPOS/neovim/onedark.colorway.vim;;
         'xinit'|'x')
             $VIM $REPOS/arch/settings/dotfiles/.xinitrc;;
+        'yabai'|'y')
+            $VIM ~/.config/yabai/yabairc;;
         'zsh'|'z')
             $VIM $REPOS/zsh;;
         'zsh'|'zz') # zsh's zshrc + all files in that dir, depth=1
