@@ -1,9 +1,9 @@
 #! /bin/zsh 
 
-alias 2code="cd $REPOS/codeforces && rmdir --ignore-fail-on-non-empty */"
+alias 2code="cd $REPOS/codeforces && rmdir 2> /dev/null */"
 function 2today() {
     t=$(date +%Y-%m-%d)
-    cd $REPOS/codeforces && rmdir --ignore-fail-on-non-empty */
+    cd $REPOS/codeforces && rmdir 2> /dev/null */
     mkdir -p $t
     cd $t
 }
