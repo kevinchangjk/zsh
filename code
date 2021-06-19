@@ -33,7 +33,7 @@ function cnr_run() {
 function pnr() {
     input="$*"
     n=${input%.*}
-    time (python $n.py < input_$n.txt)
+    time (python3 $n.py < input_$n.txt)
 }
 
 # USAGE: problemset [difficulty]
