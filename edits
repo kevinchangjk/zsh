@@ -1,56 +1,57 @@
 #! /bin/zsh
 
 function ed() {
-    case $1 in
-        '.')
-            $VIM $ZSH_DOTS/edits;;
-        'alacritty'|'a') # bar
-            $VIM $HOME/.config/alacritty/alacritty.yml;;
-        'dwmblocks'|'b') # bar
-            $VIM $REPOS/dwmblocks/blocks.def.h;;
-        'dwm'|'d')
-            $VIM -S ~/.config/nvim/sessions/dwm;;
-        'dunst')
-            $VIM ~/.config/dunst/dunstrc;;
-        'imwheel'|'i')
-            $VIM $REPOS/arch/settings/dotfiles/.imwheelrc;;
-        'firefox'|'f')
-            $VIM $HOME/.mozilla/firefox/eg18esvc.default-release/chrome/userChrome.css;;
-        'git'|'g')
-            $VIM $HOME/.gitconfig;;
-        'hosts'|'h')
-            $VIM $REPOS/arch/settings/etc/hosts;;
-        'keeb'|'k')
-            # cd $REPOS/qmk_firmware && nvim keyboards/dz60/keymaps/khang/keymap.c;;
-            cd $REPOS/qmk_firmware && $VIM -S ~/.config/nvim/sessions/keeb;;
-        'lsd'|'l')
-            $VIM $REPOS/arch/settings/.config/lsd/config.yaml;;
-        'navigation'|'n')
-            $VIM $REPOS/zsh/alias/nav;;
-        'picom'|'p')
-            $VIM $REPOS/arch/settings/.config/picom/picom.conf;;
-        'rofi'|'r')
-            $VIM $REPOS/arch/settings/.config/rofi/config.rasi;;
-        'skhd'|'s')
-            $VIM ~/.config/skhd/skhdrc;;
-        'kitty'|'t') # terminal
-            $VIM $REPOS/arch/settings/.config/kitty/kitty.conf;;
-        'nvim'|'vim'|'v') # vim
-            $VIM $REPOS/neovim/init.vim;;
-        'vs') # vim
-            $VIM $REPOS/neovim/sets.vim;;
-        'vc') # vim
-            $VIM $REPOS/neovim/onedark.colorway.vim;;
-        'xinit'|'x')
-            $VIM $REPOS/arch/settings/dotfiles/.xinitrc;;
-        'yabai'|'y')
-            $VIM ~/.config/yabai/yabairc;;
-        'zsh'|'z')
-            $VIM $REPOS/zsh;;
-        'zshrc'|'zp') 
-            $VIM $REPOS/zsh/prompt;;
-        'zshrc'|'zz') # zsh's zshrc
-            $VIM $REPOS/zsh/zshrc;;
-        *) echo "nothing happened.";;
-    esac
+  case $1 in
+  '.')
+    $VIM $ZSH_DOTS/edits;;
+  'alacritty'|'a') # bar
+    $VIM $HOME/.config/alacritty/alacritty.yml;;
+  'dwmblocks'|'b') # bar
+    $VIM $REPOS/dwmblocks/blocks.def.h;;
+  'dwm'|'d')
+    $VIM -S ~/.config/nvim/sessions/dwm;;
+  'dunst')
+    $VIM ~/.config/dunst/dunstrc;;
+  'imwheel'|'i')
+    $VIM $REPOS/arch/settings/dotfiles/.imwheelrc;;
+  'firefox'|'f')
+    $VIM $HOME/.mozilla/firefox/eg18esvc.default-release/chrome/userChrome.css;;
+  'git'|'g')
+    $VIM $HOME/.gitconfig;;
+  'hosts'|'h')
+    $VIM $REPOS/arch/settings/etc/hosts;;
+  'keeb'|'k')
+    cd $REPOS/qmk_firmware && nvim keyboards/dz60/keymaps/khang/keymap.c;;
+  'lsd'|'l')
+    $VIM $REPOS/arch/settings/.config/lsd/config.yaml;;
+  'navigation'|'n')
+    $VIM $REPOS/zsh/alias/nav;;
+  'picom'|'p')
+    $VIM $REPOS/arch/settings/.config/picom/picom.conf;;
+  'rofi'|'r')
+    $VIM $REPOS/arch/settings/.config/rofi/config.rasi;;
+  'skhd'|'s')
+    $VIM ~/.config/skhd/skhdrc;;
+  'kitty'|'t') # terminal
+    $VIM $REPOS/arch/settings/.config/kitty/kitty.conf;;
+  'ueli'|'u')
+    $VIM $HOME/Library/Application\ Support/ueli/config.json;;
+  'nvim'|'vim'|'v') # vim
+    $VIM $REPOS/neovim/init.vim;;
+  'vs') # vim
+    $VIM $REPOS/neovim/sets.vim;;
+  'vc') # vim
+    $VIM $REPOS/neovim/onedark.colorway.vim;;
+  'xinit'|'x')
+    $VIM $REPOS/arch/settings/dotfiles/.xinitrc;;
+  'yabai'|'y')
+    $VIM ~/.config/yabai/yabairc;;
+  'zsh'|'z')
+    $VIM $REPOS/zsh;;
+  'zshrc'|'zp') 
+    $VIM $REPOS/zsh/prompt;;
+  'zshrc'|'zz') # zsh's zshrc
+    $VIM $REPOS/zsh/zshrc;;
+  *) echo "nothing happened.";;
+  esac
 }
