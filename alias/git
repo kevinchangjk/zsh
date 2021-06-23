@@ -41,9 +41,14 @@ function gt() {
 
 # all git statuses
 function ags() {
-    CURRENT=$(pwd)
+    blacklist=(
+      HCanoe/
+    )
     cd $REPOS
     for d in */; do
+        if [[ ${blacklist[(r)$d]} == $d ]]; then
+          continue
+        fi
         if [[ -d $d.git ]]; then
             cd $d
             commitStatus=$(git status 2> /dev/null | ag "nothing to commit, working tree clean")
@@ -67,7 +72,6 @@ function ags() {
             unset upToDate
         fi
     done
-    cd $CURRENT
     echo ${CYAN}"---"${NORMAL}
 }
 
