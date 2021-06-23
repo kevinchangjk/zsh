@@ -1,8 +1,5 @@
 #! /bin/zsh
 
-alias ga="git number add"
-alias giti="$VIM .gitignore"
-alias gitm="$VIM .gitmodules"
 function gl() {
 	if [ "$1" ]; then
 		[ -z "${1//[0-9]}" ] && git log --oneline --graph -n $1
@@ -11,73 +8,32 @@ function gl() {
 	fi
 
 }
+
+alias gs="git number" # git status
+alias ga="git number add"
 alias gaa="git add --all"
+alias gco="git number checkout"
+alias gb="git branch"
+alias gcm="git commit -m"
+
+alias gca="git commit --amend -m"
+alias gd="git number diff"
+alias giti="$VIM .gitignore"
+alias gr="git number reset"
+alias gitm="$VIM .gitmodules"
+alias gp="git number -c $VIM" # git preview
+
+alias gap="git number add -p"
+alias gms="git merge --squash" # squash diff into one commit
+
+alias gu="git fetch && git number status" # git update
+alias gc="git commit"
 alias gau="git add -u"
 alias ga.="git add ."
-alias gap="git number add -p"
-alias gb="git branch"
-alias gc="git commit"
-alias gcm="git commit -m"
-alias gca="git commit --amend -m"
-alias gco="git number checkout"
-alias gd="git number diff"
-alias gr="git number reset"
-alias gs="git number" # git status
-alias gp="git number -c $VIM" # git preview
-alias gms="git merge --squash" # squash diff into one commit
-alias gu="git fetch && git number status" # git update
-function gt() {
-    tag_list=(
-        css
-        mdx
-        js
-        comp
-        )
-    [ "$1" = "e" ] && ($VIM $REPOS/zsh/alias/git -c "/tag_list" && return) ||
-    (for i in ${tag_list[@]}; do
-        echo \[$i\]
-    done)
-}
-
-# all git statuses
-# function ags() {
-#     blacklist=(
-#       HCanoe/
-#     )
-#     cd $REPOS
-#     for d in */; do
-#         if [[ ${blacklist[(r)$d]} == $d ]]; then
-#           continue
-#         fi
-#         if [[ -d $d.git ]]; then
-#             cd $d
-#             commitStatus=$(git status 2> /dev/null | ag "nothing to commit, working tree clean")
-#             upToDate=$(git status 2> /dev/null | ag "Your branch is up to date with")
-#             if [[ -z $commitStatus ]]; then
-#                 echo ${CYAN}"---"${NORMAL}
-#                 echo -n ${GREEN}"repo: "${d%"/"} ${NORMAL}
-#                 git status
-#                 cd $REPOS
-#                 unset commitStatus
-#             fi
-#             if [[ -z $upToDate ]]; then
-#                 echo ${CYAN}"---"${NORMAL}
-#                 echo -n ${GREEN}"repo: "${d%"/"} ${NORMAL}
-#                 git status
-#                 cd $REPOS
-#                 unset upToDate
-#             fi
-#             cd $REPOS
-#             unset commitStatus
-#             unset upToDate
-#         fi
-#     done
-#     echo ${CYAN}"---"${NORMAL}
-# }
 
 function ags() {
   blacklist=(
-    memelord
+    blackbeard
   )
   CURRENT=$(pwd)
   for d in $REPOS/*/; do
