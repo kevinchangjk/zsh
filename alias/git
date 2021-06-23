@@ -32,6 +32,7 @@ alias gau="git add -u"
 alias ga.="git add ."
 
 function ags() {
+  local flag=true
   blacklist=(
     blackbeard
   )
@@ -42,11 +43,14 @@ function ags() {
     [[ ${blacklist[(r)$CURRENT_REPO]} == $CURRENT_REPO ]] && continue
     gitStatus=$(git status --porcelain)
     if [ ! -z $gitStatus ]; then
+      flag=false
       echo $YELLOW$(pwd | awk -F/ '{print $NF}')$NORMAL
       echo $gitStatus
     fi
   done
   cd $CURRENT
+  $flag && echo $GREEN"Clean."$NORMAL
+  return true
 }
 
 # delete branch with:
