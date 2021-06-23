@@ -41,7 +41,7 @@ function ags() {
     cd $d
     CURRENT_REPO=$(pwd | awk -F/ '{print $NF}')
     [[ ${blacklist[(r)$CURRENT_REPO]} == $CURRENT_REPO ]] && continue
-    gitStatus=$(git status --porcelain)
+    gitStatus=$(git status -s)
     if [ ! -z $gitStatus ]; then
       flag=false
       echo $YELLOW$(pwd | awk -F/ '{print $NF}')$NORMAL
