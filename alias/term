@@ -1,16 +1,5 @@
 #! /bin/zsh
 
-# the modern ls
-# alias ls="lsd"
-# alias ll="lsd --long"
-# function lt() {
-#     [ -z $1 ] && lsd --tree --depth 2 && return
-#     [ "$1" ] && [ -z "${1//[0-9]}" ] && lsd --tree --depth $1 && return
-#     if [ -d $1 ]; then
-#         [ -z $2 ] && lsd --tree --depth 2 -- $1 && return
-#         [ "$2" ] && [ -z "${2//[0-9]}" ] && lsd --tree --depth $2 -- $1 && return
-#     fi
-# }
 alias ls="exa -a --group-directories-first"
 alias ll="exa -al --group-directories-first"
 function lt() {
