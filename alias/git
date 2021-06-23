@@ -30,9 +30,11 @@ alias gu="git fetch && git number status" # git update
 alias gc="git commit"
 alias gau="git add -u"
 alias ga.="git add ."
+alias gsc="git number -c"
 
 function ags() {
   local flag=true
+  MAX_LEN=18
   blacklist=(
     blackbeard
   )
@@ -40,22 +42,33 @@ function ags() {
   for d in $REPOS/*/; do
     cd $d
     CURRENT_REPO=$(pwd | awk -F/ '{print $NF}')
-    echo $CURRENT_REPO
+    STR_LEN=$(echo -n $CURRENT_REPO | wc -m)
     [[ ${blacklist[(r)$CURRENT_REPO]} == $CURRENT_REPO ]] && continue
     gitStatus=$(git status -s)
-    gitRemote=$(git cherry -v)
+    gitRemote=()
+    while IFS= read -r line; do
+      gitRemote+=( "$line" )
+    done < <( git cherry -v 2> /dev/null )
     # uncommitted changes
     if [ ! -z $gitStatus ]; then
       flag=false
-      echo $YELLOW$(pwd | awk -F/ '{print $NF}')$NORMAL
+      echo $CYAN$(pwd | awk -F/ '{print $NF}')$NORMAL
       echo $gitStatus
     # unpushed commits
-    elif [ ! -z $gitRemote ]; then
+    elif [ ! -z $gitRemote[1] ]; then
       flag=false
-      echo $YELLOW$(pwd | awk -F/ '{print $NF}')$NORMAL
-      echo $gitRemote
+      echo $CYAN$(pwd | awk -F/ '{print $NF}')$NORMAL
+      for i in $gitRemote[@]; do
+        pre=$(echo $i | cut -d ' ' -f1)
+        post=$(echo $i | cut -d ' ' -f3-)
+        commit=$(echo $i | cut -d ' ' -f2)
+        commit=$YELLOW${commit:0:7}$NORMAL
+        echo $pre $commit $post
+      done
     else
-      echo $YELLOW$(pwd | awk -F/ '{print $NF}')$NORMAL...${GREEN}clean$NORMAL
+      DOT_LEN=$(echo $(( MAX_LEN - STR_LEN )))
+      PRINT_DOT=$(seq  -f " " -s '' $DOT_LEN)
+      echo $CYAN$(pwd | awk -F/ '{print $NF}')${NORMAL}$PRINT_DOT${GREEN}"[ok]"$NORMAL
     fi
   done
   cd $CURRENT
