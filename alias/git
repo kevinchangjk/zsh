@@ -49,7 +49,7 @@ function ags() {
     fi
   done
   cd $CURRENT
-  $flag && echo $GREEN" clean."$NORMAL
+  $flag && echo $GREEN"  clean."$NORMAL
   return true
 }
 
