@@ -30,7 +30,6 @@ alias gu="git fetch && git number status" # git update
 alias gc="git commit"
 alias gau="git add -u"
 alias ga.="git add ."
-alias gsc="git number -c"
 
 function ags() {
   local flag=true
@@ -72,7 +71,6 @@ function ags() {
     fi
   done
   cd $CURRENT
-  $flag && echo $GREEN"  clean."$NORMAL
   return true
 }
 
