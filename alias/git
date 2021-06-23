@@ -40,39 +40,57 @@ function gt() {
 }
 
 # all git statuses
+# function ags() {
+#     blacklist=(
+#       HCanoe/
+#     )
+#     cd $REPOS
+#     for d in */; do
+#         if [[ ${blacklist[(r)$d]} == $d ]]; then
+#           continue
+#         fi
+#         if [[ -d $d.git ]]; then
+#             cd $d
+#             commitStatus=$(git status 2> /dev/null | ag "nothing to commit, working tree clean")
+#             upToDate=$(git status 2> /dev/null | ag "Your branch is up to date with")
+#             if [[ -z $commitStatus ]]; then
+#                 echo ${CYAN}"---"${NORMAL}
+#                 echo -n ${GREEN}"repo: "${d%"/"} ${NORMAL}
+#                 git status
+#                 cd $REPOS
+#                 unset commitStatus
+#             fi
+#             if [[ -z $upToDate ]]; then
+#                 echo ${CYAN}"---"${NORMAL}
+#                 echo -n ${GREEN}"repo: "${d%"/"} ${NORMAL}
+#                 git status
+#                 cd $REPOS
+#                 unset upToDate
+#             fi
+#             cd $REPOS
+#             unset commitStatus
+#             unset upToDate
+#         fi
+#     done
+#     echo ${CYAN}"---"${NORMAL}
+# }
+
 function ags() {
-    blacklist=(
-      HCanoe/
-    )
-    cd $REPOS
-    for d in */; do
-        if [[ ${blacklist[(r)$d]} == $d ]]; then
-          continue
-        fi
-        if [[ -d $d.git ]]; then
-            cd $d
-            commitStatus=$(git status 2> /dev/null | ag "nothing to commit, working tree clean")
-            upToDate=$(git status 2> /dev/null | ag "Your branch is up to date with")
-            if [[ -z $commitStatus ]]; then
-                echo ${CYAN}"---"${NORMAL}
-                echo -n ${GREEN}"repo: "${d%"/"} ${NORMAL}
-                git status
-                cd $REPOS
-                unset commitStatus
-            fi
-            if [[ -z $upToDate ]]; then
-                echo ${CYAN}"---"${NORMAL}
-                echo -n ${GREEN}"repo: "${d%"/"} ${NORMAL}
-                git status
-                cd $REPOS
-                unset upToDate
-            fi
-            cd $REPOS
-            unset commitStatus
-            unset upToDate
-        fi
-    done
-    echo ${CYAN}"---"${NORMAL}
+  blacklist=(
+    memelord
+  )
+  CURRENT=$(pwd)
+  for d in $REPOS/*/; do
+    cd $d
+    CURRENT_REPO=$(pwd | awk -F/ '{print $NF}')
+    [[ ${blacklist[(r)$CURRENT_REPO]} == $CURRENT_REPO ]] && continue
+    gitStatus=$(git status --porcelain)
+    if [ ! -z $gitStatus ]; then
+      echo $YELLOW$(pwd | awk -F/ '{print $NF}')$NORMAL
+      echo $gitStatus
+    fi
+  done
+  cd $CURRENT
 }
 
 # delete branch with:
