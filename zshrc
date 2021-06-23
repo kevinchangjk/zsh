@@ -26,6 +26,7 @@ dot_list=(
     math
     code
     edits
+    alias/clasp
     alias/dwm
     alias/git
     alias/firefox
