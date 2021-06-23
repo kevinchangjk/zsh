@@ -40,12 +40,22 @@ function ags() {
   for d in $REPOS/*/; do
     cd $d
     CURRENT_REPO=$(pwd | awk -F/ '{print $NF}')
+    echo $CURRENT_REPO
     [[ ${blacklist[(r)$CURRENT_REPO]} == $CURRENT_REPO ]] && continue
     gitStatus=$(git status -s)
+    gitRemote=$(git cherry -v)
+    # uncommitted changes
     if [ ! -z $gitStatus ]; then
       flag=false
       echo $YELLOW$(pwd | awk -F/ '{print $NF}')$NORMAL
       echo $gitStatus
+    # unpushed commits
+    elif [ ! -z $gitRemote ]; then
+      flag=false
+      echo $YELLOW$(pwd | awk -F/ '{print $NF}')$NORMAL
+      echo $gitRemote
+    else
+      echo $YELLOW$(pwd | awk -F/ '{print $NF}')$NORMAL...${GREEN}clean$NORMAL
     fi
   done
   cd $CURRENT
