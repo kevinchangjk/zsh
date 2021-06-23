@@ -3,6 +3,7 @@
 cd
 
 # key variables
+OS="mac" # either of mac or linux
 ZSH_DOTS="$HOME/repos/zsh"
 REPOS="$HOME/repos"
 VIM="nvim"
@@ -20,29 +21,32 @@ WHITE="\e[1;37m"
 
 # scripts to be sourced
 dot_list=(
-    exports
-    paths
-    prompt
-    math
-    code
-    edits
-    alias/clasp
-    alias/dwm
-    alias/git
-    alias/firefox
-    alias/keeb
-    alias/me
-    alias/mount
-    alias/nav
-    alias/pacman
-    alias/term
-    alias/xorg
-    )
+  exports
+  paths
+  prompt
+  math
+  code
+  edits
+  alias/clasp
+  alias/git
+  alias/firefox
+  alias/keeb
+  alias/me
+  alias/nav
+  alias/term
+  )
+
+dot_linux=(
+  alias/dwm
+  alias/mount
+  alias/pacman
+  alias/xorg
+  )
+
 
 # source the scripts
-for file in $dot_list[@]; do
-    source "$ZSH_DOTS/$file"
-done
+for file in $dot_list[@]; do source "$ZSH_DOTS/$file"; done
+[ "$OS" = "linux" ] && for file in $dot_linux[@]; do source "$ZSH_DOTS/$file"; done
 
 # key aliases
 alias zr="source ~/.zshrc"
