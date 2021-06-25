@@ -9,6 +9,6 @@ alias dt="cd $NOTES && git diff $NOTES/todo.md"
 alias gut="cd $NOTES && git add todo.md && git commit -m 'update' && git push" # git update todo
 alias gup="pass git push"
 
-alias py="python3"
+alias py="python"
 alias snowball="$VIM $NOTES/stonks.md"
 alias bsr="brew services restart"
