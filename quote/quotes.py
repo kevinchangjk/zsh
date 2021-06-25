@@ -5,7 +5,7 @@ import subprocess
 import random
 import os
 
-f = open('/Users/khang/repos/zsh/quote/quotes.json','r')
+f = open('/home/khang/repos/zsh/quote/quotes.json','r')
 data = json.load(f)
 tput = str(subprocess.check_output(['tput','cols']))
 width = int(tput.split("\'")[1].split("\\")[0]) - 4
