@@ -6,6 +6,7 @@ function pbs() {
   pacman -Qi | awk '/^Name/{name=$3} /^Installed Size/{print $4$5, name}' | sort -h
 }
 alias Qie="$VIM $REPOS/arch/packages/packtags.json"
+alias Qi="$REPOS/arch/packages/spd.py"
 function Qir() {
 	cd $REPOS/arch/packages
   ./regen.sh
