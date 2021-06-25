@@ -3,7 +3,7 @@
 cd
 
 # key variables
-OS="mac" # either of mac or linux
+OS="linux" # either of mac or linux
 ZSH_DOTS="$HOME/repos/zsh"
 REPOS="$HOME/repos"
 VIM="nvim"
