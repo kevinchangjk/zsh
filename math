@@ -72,7 +72,7 @@ function tikz() {
         cat $x.tex >> output.tex
         ./tikz2svg/tikz2svg output.tex > ../exports/$x.svg
         rm output.tex
-        python3 update_dir.py
+        python update_dir.py
     elif [[ $x == *"tex" ]]; then
         x=${x%.*}
         echo working on $x ...
@@ -80,6 +80,6 @@ function tikz() {
         cat $x.tex >> output.tex
         ./tikz2svg/tikz2svg output.tex > ../exports/$x.svg
         rm output.tex
-        python3 update_dir.py
+        python update_dir.py
     fi
 }

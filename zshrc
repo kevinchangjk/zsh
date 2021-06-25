@@ -56,4 +56,4 @@ bindkey "^[[3~" delete-char
 bindkey '^[[Z' reverse-menu-complete
 
 clear
-python3 "$ZSH_DOTS/quote/quotes.py"
+python "$ZSH_DOTS/quote/quotes.py"
