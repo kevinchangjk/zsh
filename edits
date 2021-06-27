@@ -16,6 +16,8 @@ function ed() {
     $VIM $REPOS/arch/settings/dotfiles/.imwheelrc;;
   'firefox'|'f')
     $VIM $HOME/.mozilla/firefox/eg18esvc.default-release/chrome/userChrome.css;;
+  'font'|'fo')
+    sudo $VIM $HOME/.config/fontconfig/conf.d/50-user.conf;;
   'git'|'g')
     $VIM $HOME/.gitconfig;;
   'hosts'|'h')
@@ -44,6 +46,10 @@ function ed() {
     $VIM $REPOS/neovim/onedark.colorway.vim;;
   'xinit'|'x')
     $VIM $REPOS/arch/settings/dotfiles/.xinitrc;;
+  'xmonad'|'xm')
+    $VIM $HOME/.xmonad/xmonad.hs;;
+  'xmobar'|'xb')
+    $VIM $HOME/.xmobarrc;;
   'yabai'|'y')
     $VIM ~/.config/yabai/yabairc;;
   'zsh'|'z')
