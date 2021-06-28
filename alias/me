@@ -12,3 +12,30 @@ alias gup="pass git push"
 alias py="python"
 alias snowball="$VIM $NOTES/stonks.md"
 alias bsr="brew services restart"
+
+function nus() {
+  echo "1 Application Number: 19022276"
+  echo "2 NUSNET ID: nusstu\\E0725213"
+  echo "3 STUDENT ID: A0233213X"
+  echo ""
+  read -s -k "choice?Which to yank?"
+  case $choice in
+    "1")
+      echo "\n";
+      pass nus/app-number/19022276 | xclip -sel clip;
+      echo "copied "${YELLOW}"application number's"${NORMAL}" PIN to clipboard"
+      ;;
+    "2")
+      echo "\n";
+      pass nus/nusnet/E0725213 | xclip -sel clip;
+      echo "copied "${YELLOW}"NUSNET"${NORMAL}" password to clipboard"
+      ;;
+    "3")
+      echo "\n";
+      pass nus/student-id/A0233213X | xclip -sel clip;
+      echo "copied "${YELLOW}"STUDENT ID's"${NORMAL}" password to clipboard"
+      ;;
+    *) echo "invalid choice. At least this isn't consequential"
+      ;;
+  esac
+}
