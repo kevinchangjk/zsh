@@ -30,7 +30,7 @@ function cdisp() {
 #     ~/.fehbg
 # }
 function ddisp() {
-    xrandr --output HDMI1 --off
+    xrandr --output HDMI1 --off --output eDP1 --mode 1440x900 --pos 0x0
     ~/.fehbg
 }
 function edisp() {
