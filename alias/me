@@ -14,9 +14,9 @@ alias snowball="$VIM $NOTES/stonks.md"
 alias bsr="brew services restart"
 
 function nus() {
-  echo "1 Application Number: 19022276"
-  echo "2 NUSNET ID: nusstu\\E0725213"
-  echo "3 STUDENT ID: A0233213X"
+  echo "[1] Application Number: 19022276"
+  echo "[2] NUSNET ID: nusstu\\E0725213"
+  echo "[3] STUDENT ID: A0233213X"
   echo ""
   read -s -k "choice?Which to yank?"
   case $choice in
