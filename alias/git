@@ -36,6 +36,9 @@ function ags() {
   MAX_LEN=18
   blacklist=(
     HCanoe
+    material-design-icons
+    nusmods
+    docusaurus
   )
   CURRENT=$(pwd)
   for d in $REPOS/*/; do
