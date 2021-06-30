@@ -34,6 +34,7 @@ dot_list=(
   alias/me
   alias/nav
   alias/term
+  alias/kitty
   )
 
 dot_linux=(
