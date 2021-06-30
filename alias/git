@@ -39,6 +39,7 @@ function ags() {
     material-design-icons
     nusmods
     docusaurus
+    iTerm2-Color-Schemes
   )
   CURRENT=$(pwd)
   for d in $REPOS/*/; do
