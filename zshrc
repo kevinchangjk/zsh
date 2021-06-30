@@ -7,6 +7,11 @@ OS="linux" # either of mac or linux
 ZSH_DOTS="$HOME/repos/zsh"
 REPOS="$HOME/repos"
 VIM="nvim"
+[ "$OS" = "linux" ] && GAUSS="/run/media/khang/Gauss"
+
+# zsh magic
+autoload -U compinit
+compinit
 
 # colors
 NORMAL="\e[1;0m"
