@@ -4,3 +4,8 @@ function k2() {
   kitty @ set-tab-title 'main'
   kitty @ launch --type=tab --tab-title 'next server' --keep-focus '/home/khang/repos/arch/scripts/kitty/h2_server.sh'
 }
+
+function d2() {
+  kitty @ set-tab-title 'main'
+  kitty @ launch --type=tab --tab-title 'next server' --keep-focus '/home/khang/repos/arch/scripts/kitty/doubledegree_server.sh'
+}
