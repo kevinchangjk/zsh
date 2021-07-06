@@ -7,7 +7,7 @@ function ed() {
   'alacritty'|'a') # bar
     $VIM $HOME/.config/alacritty/alacritty.yml;;
   'dwmblocks'|'b') # bar
-    $VIM $REPOS/dwmblocks/blocks.def.h;;
+    $VIM $REPOS/dwm/dwmblocks/blocks.def.h;;
   'dwm'|'d')
     $VIM $REPOS/dwm/config.def.h;;
   'dunst')
