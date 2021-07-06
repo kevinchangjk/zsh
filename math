@@ -25,8 +25,6 @@ function h2() {
         return
     fi
     case $1 in
-        's')
-            $VIM $MATH/public/style.css;;
         'a')
             $VIM $MATH/pages/_app.js;;
         'd')
@@ -35,18 +33,12 @@ function h2() {
             $VIM $MATH/pages/index.mdx;;
         'm')
             $VIM $MATH/public/mathjax-config.js;;
-        'v')
-            $VIM -S ~/.config/nvim/sessions/math;;
-        'pr')
-            npx prettier --write -- pages components;;
         'p')
             cd $MATH/pages;;
         'c')
-            cd $MATH/components;;
+            cd $MATH/src/components;;
         'g')
-            cd $MATH/components/plots;;
-        'n')
-            cd $MATH/node_modules/nextra-theme-docs;;
+            cd $MATH/src/components/plots;;
         'r')
             cd $MATH && yarn dev;;
         '.')
