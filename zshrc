@@ -49,7 +49,6 @@ dot_linux=(
   alias/xorg
   )
 
-
 # source the scripts
 for file in $dot_list[@]; do source "$ZSH_DOTS/$file"; done
 [ "$OS" = "linux" ] && for file in $dot_linux[@]; do source "$ZSH_DOTS/$file"; done
