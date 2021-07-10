@@ -38,7 +38,7 @@ function h2() {
         'c')
             cd $MATH/src/components;;
         'g')
-            cd $MATH/src/components/plots;;
+            cd $MATH/src/plots;;
         'r')
             cd $MATH && yarn dev;;
         '.')
