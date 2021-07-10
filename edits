@@ -23,7 +23,7 @@ function ed() {
   'hosts'|'h')
     $VIM $REPOS/arch/settings/etc/hosts;;
   'keeb'|'k')
-    cd $REPOS/qmk_firmware && nvim keyboards/dz60/keymaps/khang/keymap.c;;
+    cd $REPOS/qmk_firmware && $VIM keyboards/dz60/keymaps/khang/keymap.c;;
   'lsd'|'l')
     $VIM $REPOS/arch/settings/.config/lsd/config.yaml;;
   'navigation'|'n')
@@ -38,11 +38,13 @@ function ed() {
     $VIM $REPOS/arch/settings/.config/kitty/kitty.conf;;
   'ueli'|'u')
     $VIM $HOME/Library/Application\ Support/ueli/config.json;;
-  'nvim'|'vim'|'v') # vim
+  'nvim'|'v')
     $VIM $REPOS/neovim/init.vim;;
-  'vs') # vim
+  'vim')
+    $VIM $REPOS/neovim/vimrc;;
+  'vs')
     $VIM $REPOS/neovim/sets.vim;;
-  'vc') # vim
+  'vc')
     $VIM $REPOS/neovim/onedark.colorway.vim;;
   'xinit'|'x')
     $VIM $REPOS/arch/settings/dotfiles/.xinitrc;;
