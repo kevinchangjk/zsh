@@ -39,6 +39,7 @@ dot_list=(
   alias/me
   alias/nav
   alias/term
+  alias/ssh
   alias/kitty
   )
 
