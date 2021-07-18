@@ -3,13 +3,14 @@
 cd
 
 # key variables
-OS="linux" # either of mac or linux
+OS="linux" # either mac or linux
 ZSH_DOTS="$HOME/repos/zsh"
 REPOS="$HOME/repos"
 VIM="nvim"
+alias vim=$VIM
 [ "$OS" = "linux" ] && GAUSS="/run/media/khang/Gauss"
 
-# zsh magic
+# zsh automagic completion
 autoload -U compinit
 compinit
 
@@ -29,32 +30,32 @@ dot_list=(
   exports
   paths
   prompt
-  math
   code
   edits
-  alias/clasp
-  alias/git
-  alias/firefox
-  alias/keeb
-  alias/me
-  alias/nav
-  alias/term
-  alias/ssh
-  alias/kitty
+  subs/clasp
+  subs/openmath
+  subs/git
+  subs/firefox
+  subs/keeb
+  subs/me
+  subs/nav
+  subs/term
+  subs/ssh
+  subs/kitty
   )
 
 dot_linux=(
-  alias/dwm
-  alias/mount
-  alias/pacman
-  alias/xorg
+  subs/dwm
+  subs/mount
+  subs/pacman
+  subs/xorg
   )
 
 # source the scripts
 for file in $dot_list[@]; do source "$ZSH_DOTS/$file"; done
 [ "$OS" = "linux" ] && for file in $dot_linux[@]; do source "$ZSH_DOTS/$file"; done
 
-# key aliases
+# key subses
 alias zr="source ~/.zshrc"
 
 # key key remaps
@@ -63,3 +64,6 @@ bindkey '^[[Z' reverse-menu-complete
 
 clear
 python "$ZSH_DOTS/quote/quotes.py"
+
+alias ms="cd $REPOS/qmk_firmware && make keebio/iris/rev4:khang"
+alias msf="cd $REPOS/qmk_firmware && make keebio/iris/rev4:khang:flash"

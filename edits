@@ -23,7 +23,7 @@ function ed() {
   'hosts'|'h')
     $VIM $REPOS/arch/settings/etc/hosts;;
   'keeb'|'k')
-    cd $REPOS/qmk_firmware && $VIM keyboards/dz60/keymaps/khang/keymap.c;;
+    cd $REPOS/qmk_firmware && $VIM keyboards/keebio/iris/keymaps/khang/keymap.c;;
   'lsd'|'l')
     $VIM $REPOS/arch/settings/.config/lsd/config.yaml;;
   'navigation'|'n')
@@ -32,8 +32,8 @@ function ed() {
     $VIM $REPOS/arch/settings/.config/picom/picom.conf;;
   'rofi'|'r')
     $VIM $REPOS/arch/settings/.config/rofi/config.rasi;;
-  'skhd'|'s')
-    $VIM ~/.config/skhd/skhdrc;;
+  'split'|'s')
+    $VIM $REPOS/qmk_firmware/keyboards/keebio/iris/keymaps/khang/keymap.c;;
   'kitty'|'t') # terminal
     $VIM $REPOS/arch/settings/.config/kitty/kitty.conf;;
   'ueli'|'u')
