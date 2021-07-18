@@ -1,0 +1,41 @@
+#! /bin/zsh 
+
+MATH="$REPOS/n3"
+
+function h2() {
+    cd $MATH
+    [ "$1" ] && if [ -z "${1//[0-9]}" ]; then
+        open=()
+        for i in $@:
+            if [[ $i = *":" ]]; then
+                open+=("pages/ch${i%%:*}.mdx")
+            else
+                open+=("pages/ch$i.mdx")
+            fi
+        $VIM $open
+        return
+    fi
+    case $1 in
+        'a')
+            $VIM $MATH/pages/_app.js;;
+        'd')
+            $VIM $MATH/pages/_document.js;;
+        'i')
+            $VIM $MATH/pages/index.mdx;;
+        'm')
+            $VIM $MATH/public/mathjax-config.js;;
+        'p')
+            cd $MATH/pages;;
+        'c')
+            cd $MATH/src/components;;
+        'g')
+            cd $MATH/src/plots;;
+        'r')
+            cd $MATH && yarn dev;;
+        '.')
+            $VIM $REPOS/zsh/subs/openmath -c "/function h2";;
+        '');;
+        *)
+            echo "nothing happened.";;
+    esac
+}

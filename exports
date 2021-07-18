@@ -10,6 +10,3 @@ export VCONF="$HOME/.config/nvim"
 
 # for alacritty DPI settings
 export WINIT_X11_SCALE_FACTOR=1
-
-# essential for fzf preview to work properly
-export BAT_THEME="Nord"

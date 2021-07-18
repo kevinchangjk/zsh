@@ -1,6 +1,7 @@
 #! /bin/zsh 
 
 alias 2code="cd $REPOS/codeforces && rmdir 2> /dev/null */"
+
 function 2today() {
   t=$(date +%Y-%m-%d)
   cd $REPOS/codeforces && rmdir 2> /dev/null */
@@ -19,6 +20,7 @@ function cnr() {
     time (cnr_run $*)
     rm a.out
 }
+
 function cnr_run() {
 	input="$*"
 	n=${input%.*}
