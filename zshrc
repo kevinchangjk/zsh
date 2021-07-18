@@ -30,9 +30,9 @@ dot_list=(
   exports
   paths
   prompt
-  code
   edits
   subs/clasp
+  subs/code
   subs/openmath
   subs/git
   subs/firefox
