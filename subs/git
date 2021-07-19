@@ -32,7 +32,6 @@ alias gau="git add -u"
 alias ga.="git add ."
 
 function ags() {
-  local flag=true
   MAX_LEN=18
   blacklist=(
     HCanoe
@@ -54,12 +53,10 @@ function ags() {
     done < <( git cherry -v 2> /dev/null )
     # uncommitted changes
     if [ ! -z $gitStatus ]; then
-      flag=false
       echo $CYAN$(pwd | awk -F/ '{print $NF}')$NORMAL
       echo $gitStatus
     # unpushed commits
     elif [ ! -z $gitRemote[1] ]; then
-      flag=false
       echo $CYAN$(pwd | awk -F/ '{print $NF}')$NORMAL
       for i in $gitRemote[@]; do
         pre=$(echo $i | cut -d ' ' -f1)
