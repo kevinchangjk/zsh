@@ -1,0 +1,16 @@
+#! /bin/zsh
+
+function v() {
+  case $1 in
+    '.')
+      $VIM $ZSH_DOTS/subs/vim;;
+    'o')
+      cd $REPOS/n3
+      $VIM $REPOS/n3;;
+    'h')
+      cd $REPOS/hcanoe
+      $VIM $REPOS/hcanoe;;
+    *)
+      echo 'no vimming was done.';;
+  esac
+}
