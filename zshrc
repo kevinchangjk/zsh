@@ -42,6 +42,7 @@ dot_list=(
   subs/term
   subs/ssh
   subs/kitty
+  subs/vim
   )
 
 dot_linux=(
