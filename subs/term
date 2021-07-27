@@ -32,10 +32,7 @@ alias kf="kitty + list-fonts --psnames | ag"
 
 # monitors keystrokes
 function eventviewer() {
-     xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
+	 xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
 }
-
-# quick load vim
-alias vs="$VIM -S ~/.config/nvim/sessions/v"
 
 alias ren="$VIM -c 'Ren'"
