@@ -30,6 +30,7 @@ dot_list=(
   exports
   paths
   prompt
+  unsorted
   edits
   subs/clasp
   subs/code
