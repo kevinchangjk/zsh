@@ -18,6 +18,7 @@ alias gcm="git commit -m"
 
 alias gca="git commit --amend -m"
 alias gd="git number diff"
+alias gds="git number diff --staged"
 alias giti="$VIM .gitignore"
 alias gr="git number reset"
 alias gitm="$VIM .gitmodules"
