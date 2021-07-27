@@ -8,7 +8,6 @@ alias tt="cat $NOTES/todo.md"
 alias dt="cd $NOTES && git diff $NOTES/todo.md"
 alias gut="cd $NOTES && git add todo.md && git commit -m 'update' && git push" # git update todo
 alias gup="pass git push"
-alias yd="yarn dev"
 
 alias py="python"
 alias snowball="$VIM $NOTES/stonks.md"
