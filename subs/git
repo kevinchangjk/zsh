@@ -51,7 +51,7 @@ function ags() {
     gitRemote=()
     while IFS= read -r line; do
       gitRemote+=( "$line" )
-    done < <( git cherry -v 2> /dev/null )
+    done < <( git cherry -v --abbrev 2> /dev/null )
     # uncommitted changes
     if [ ! -z $gitStatus ]; then
       echo $CYAN$(pwd | awk -F/ '{print $NF}')$NORMAL
@@ -63,7 +63,7 @@ function ags() {
         pre=$(echo $i | cut -d ' ' -f1)
         post=$(echo $i | cut -d ' ' -f3-)
         commit=$(echo $i | cut -d ' ' -f2)
-        commit=$YELLOW${commit:0:7}$NORMAL
+        commit=$YELLOW${commit}$NORMAL
         echo $pre $commit $post
       done
     else
