@@ -40,6 +40,8 @@ function ed() {
     $VIM $HOME/Library/Application\ Support/ueli/config.json;;
   'nvim'|'v')
     $VIM $REPOS/neovim/init.vim;;
+  'nvimlua'|'vl')
+    $VIM $REPOS/neovim/lua/brew/init.lua;;
   'vim')
     $VIM $REPOS/neovim/vimrc;;
   'vs')
