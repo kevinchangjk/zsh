@@ -1,3 +1,4 @@
 #! /bin/zsh
 
 alias yd="yarn dev"
+alias yb="yarn build"
