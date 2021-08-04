@@ -3,7 +3,6 @@
 NOTES="$REPOS/notes"
 alias nn="$VIM $NOTES/posts"
 alias n="$VIM $NOTES/posts/.inbox.md"
-alias t="$VIM $NOTES/todo.md"
 alias tt="cat $NOTES/todo.md"
 alias dt="cd $NOTES && git diff $NOTES/todo.md"
 alias gut="cd $NOTES && git add todo.md && git commit -m 'update' && git push" # git update todo
