@@ -2,3 +2,15 @@
 
 alias yd="yarn dev"
 alias yb="yarn build"
+
+# todo function:
+# opens a file called todo (in caps) at the
+# root of the git repo of pwd
+function t() {
+  todo="$(git rev-parse --show-toplevel)/TODO" &> /dev/null
+  if [[ -f "$todo" ]]; then
+    nvim $todo
+  else
+    echo 'no todo found'
+  fi
+}
