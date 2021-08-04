@@ -13,6 +13,12 @@ alias py="python"
 alias snowball="$VIM $NOTES/stonks.md"
 alias bsr="brew services restart"
 
+function mc() {
+  echo "brew4k@gmail.com" | xclip -sel clip
+  read -s -k "choice?Email yanked. Continue?"
+  pass microsoft/brew4k@gmail.com | xclip -sel clip
+}
+
 function nus() {
   echo "[1] Application Number: 19022276"
   echo "[2] NUSNET ID: nusstu\\E0725213"
@@ -22,15 +28,24 @@ function nus() {
   case $choice in
     "1")
       echo "\n";
+      echo "19022276" | xclip -sel clip
+      read -s -k "cont?username yanked. Continue?"
+      echo "\n";
       pass nus/app-number/19022276 | xclip -sel clip;
       echo "copied "${YELLOW}"application number's"${NORMAL}" PIN to clipboard"
       ;;
     "2")
       echo "\n";
+      echo "nusstu\\E0725213" | xclip -sel clip
+      read -s -k "cont?username yanked. Continue?"
+      echo "\n";
       pass nus/nusnet/E0725213 | xclip -sel clip;
       echo "copied "${YELLOW}"NUSNET"${NORMAL}" password to clipboard"
       ;;
     "3")
+      echo "\n";
+      echo "A0233213X" | xclip -sel clip
+      read -s -k "cont?username yanked. Continue?"
       echo "\n";
       pass nus/student-id/A0233213X | xclip -sel clip;
       echo "copied "${YELLOW}"STUDENT ID's"${NORMAL}" password to clipboard"
