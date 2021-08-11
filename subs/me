@@ -12,11 +12,16 @@ alias py="python"
 alias snowball="$VIM $NOTES/stonks.md"
 alias bsr="brew services restart"
 
+function mcs() {
+  cd $HOME/minecraft/server && ./start.sh &
+}
 function mc() {
   echo "brew4k@gmail.com" | xclip -sel clip
   read -s -k "choice?Email yanked. Continue?"
   pass microsoft/brew4k@gmail.com | xclip -sel clip
 }
+
+alias ml='matlab -nodesktop'
 
 function nus() {
   echo "[1] Application Number: 19022276"
