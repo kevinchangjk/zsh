@@ -30,10 +30,11 @@ alias 2q="cd $REPOS/qmk_firmware"
 alias 2t="cd $REPOS/arch/settings/.config/kitty"
 alias 2tel="cd $HOME/.config/nvim/plugged/telescope.nvim/lua/telescope"
 alias 2t.="cd $HOME/.config/kitty"
-alias 2u="cd $REPOS/upgraded-chainsaw"
+alias 2u="cd $REPOS/upgraded-chainsaw/pages/brew"
 alias 2v="cd $REPOS/neovim"
 alias 2v.="cd $HOME/.config/nvim"
 alias 2vs="cd $REPOS/neovim/sessions"
+alias 2w="cd $REPOS/blog/data/blog"
 alias 2z="cd $REPOS/zsh"
 
 function 2r() {
