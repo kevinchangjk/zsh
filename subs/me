@@ -1,20 +1,11 @@
 #! /bin/zsh
 
 NOTES="$REPOS/notes"
-alias nn="$VIM $NOTES/posts"
 alias n="$VIM $NOTES/posts/.inbox.md"
-alias tt="cat $NOTES/todo.md"
-alias dt="cd $NOTES && git diff $NOTES/todo.md"
-alias gut="cd $NOTES && git add todo.md && git commit -m 'update' && git push" # git update todo
+alias t="$VIM $NOTES/TODO.md"
 alias gup="pass git push"
-
 alias py="python"
-alias snowball="$VIM $NOTES/stonks.md"
-alias bsr="brew services restart"
 
-function mcs() {
-  cd $HOME/minecraft/server && ./start.sh &
-}
 function mc() {
   echo "brew4k@gmail.com" | xclip -sel clip
   read -s -k "choice?Email yanked. Continue?"
