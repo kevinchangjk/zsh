@@ -1,8 +1,5 @@
 #! /bin/zsh
 
-NOTES="$REPOS/notes"
-alias n="$VIM $NOTES/posts/.inbox.md"
-alias t="$VIM $NOTES/TODO.md"
 alias gup="pass git push"
 alias py="python"
 
