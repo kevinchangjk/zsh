@@ -65,7 +65,7 @@ bindkey "^[[3~" delete-char
 bindkey '^[[Z' reverse-menu-complete
 
 clear
-[ "$OS" = "linux" ] || python "$ZSH_DOTS/quote/quotes.py"
+[ "$OS" = "linux" ] && python "$ZSH_DOTS/quote/quotes.py"
 
 alias ms="cd $REPOS/qmk_firmware && make keebio/iris/rev4:khang"
 alias msf="cd $REPOS/qmk_firmware && make keebio/iris/rev4:khang:flash"
