@@ -11,14 +11,14 @@ function 2today() {
 
 # compile and run c++
 function cnr() {
-    echo ------------
-    echo compiling...
-    input="$*"
-    g++ $input
-    echo running:
-    echo ------------
-    time (cnr_run $*)
-    rm a.out
+  echo ------------
+  echo compiling...
+  input="$*"
+  g++ $input
+  echo running:
+  echo ------------
+  time (cnr_run $*)
+  rm a.out
 }
 
 function cnr_run() {
@@ -33,14 +33,14 @@ function cnr_run() {
 
 # run python    
 function pnr() {
-    input="$*"
-    n=${input%.*}
-    time (python $n.py < input_$n.txt)
+  input="$*"
+  n=${input%.*}
+  time (python $n.py < input_$n.txt)
 }
 
 # USAGE: problemset [difficulty]
 function problemset() {
-    diff=$1
-    url="https://codeforces.com/problemset?tags="$diff"-"$diff
-    firefox $url
+  diff=$1
+  url="https://codeforces.com/problemset?tags="$diff"-"$diff
+  firefox $url
 }

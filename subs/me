@@ -45,4 +45,5 @@ function nus() {
     *) echo "invalid choice. At least this isn't consequential"
       ;;
   esac
+  return true
 }

@@ -1,0 +1,12 @@
+#! /bin/zsh
+
+function new() {
+  case $1 in
+    '.')
+      $VIM $ZSH_DOTS/new;;
+    'tex')
+      cp $ZSH_DOTS/templates/t.tex untitled.tex
+      $VIM untitled.tex;;
+  *) echo "nothing was created.";;
+  esac
+}

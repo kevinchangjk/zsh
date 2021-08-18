@@ -32,6 +32,7 @@ dot_list=(
   prompt
   unsorted
   edits
+  new
   subs/clasp
   subs/code
   subs/openmath
