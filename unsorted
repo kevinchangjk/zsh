@@ -3,3 +3,15 @@
 alias yd="yarn dev"
 alias yb="yarn build"
 alias oc="octave"
+
+SYNCED_DIR="$HOME/server/"
+
+function wd() {
+  case $1 in
+  "up")
+    rsync -a $SYNCED_DIR brew@$SV:~/files;;
+  "down")
+    rsync -a brew@$SV:~/files/ $SYNCED_DIR;;
+  *) echo "nothing happened.";;
+  esac
+}
