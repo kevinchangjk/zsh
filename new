@@ -5,8 +5,8 @@ function new() {
     '.')
       $VIM $ZSH_DOTS/new;;
     'tex')
-      cp $ZSH_DOTS/templates/t.tex untitled.tex
-      $VIM untitled.tex;;
+      cp $ZSH_DOTS/templates/t.tex $2.tex
+      $VIM $2.tex;;
   *) echo "nothing was created.";;
   esac
 }

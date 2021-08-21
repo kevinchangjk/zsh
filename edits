@@ -47,15 +47,9 @@ function ed() {
   'ueli'|'u')
     $VIM $HOME/Library/Application\ Support/ueli/config.json;;
   'nvim'|'v')
-    $VIM $REPOS/neovim/init.vim;;
-  'nvimlua'|'vl')
-    $VIM $REPOS/neovim/lua/brew/init.lua;;
-  'vim')
-    $VIM $REPOS/neovim/vimrc;;
+    $VIM $REPOS/neovim/init.lua;;
   'vs')
-    $VIM $REPOS/neovim/sets.vim;;
-  'vc')
-    $VIM $REPOS/neovim/onedark.colorway.vim;;
+    $VIM $REPOS/neovim/lua/brew/sets.lua;;
   'xinit'|'x')
     $VIM $REPOS/arch/settings/dotfiles/.xinitrc;;
   'xmonad'|'xm')
