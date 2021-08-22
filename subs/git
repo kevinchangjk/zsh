@@ -41,6 +41,7 @@ function gcm() {
 function ags() {
   MAX_LEN=18
   blacklist=(
+    uni
     HCanoe
     material-design-icons
     nusmods
