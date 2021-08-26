@@ -28,3 +28,13 @@ function kh() {
   echo "kitty_mod + r           start_resizing_window"
   echo "kitty_mod + ,           load_config_file"
 }
+
+function g() {
+  res=$(fd -t d)
+  if [[ ${#res[@]} = 0 ]] then
+    echo 'no children directories.'
+    return
+  fi
+  target=$(echo $res | fzf --height=5 +m --no-mouse)
+  cd $target
+}
