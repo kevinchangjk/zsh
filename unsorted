@@ -35,6 +35,34 @@ function g() {
     echo 'no children directories.'
     return
   fi
-  target=$(echo $res | fzf --height=5 +m --no-mouse)
+  target=$(echo $res | fzf --height=10 +m --no-mouse)
   cd $target
+}
+
+function v() {
+  choices=(
+    university
+    hcanoe
+    vim
+    zsh
+  )
+  projects=(
+    $REPOS/uni/next/pages
+    $REPOS/hcanoe/dev
+    $REPOS/neovim
+    $REPOS/zsh
+  )
+  string=""
+  for i in $choices; do
+    # string+=\\n$i
+    string+=\\n$i
+  done
+  string=${string/\\n/}
+
+  target=$(echo $string | fzf --height=10)
+
+  index=${choices[(ie)$target]}
+  [[ $index = 5 ]] && return true
+
+  cd ${projects[$index]} && nvim .
 }
