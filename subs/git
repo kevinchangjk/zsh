@@ -42,11 +42,8 @@ function ags() {
   MAX_LEN=18
   blacklist=(
     uni
-    HCanoe
-    material-design-icons
-    nusmods
-    docusaurus
-    iTerm2-Color-Schemes
+    hcanoe
+    vim-plugins
   )
   CURRENT=$(pwd)
   for d in $REPOS/*/; do
