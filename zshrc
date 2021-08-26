@@ -1,5 +1,7 @@
 #! /bin/zsh 
 
+# zsh cheatsheet
+# ./zsh-cheatsheet.md
 cd
 
 # key variables
