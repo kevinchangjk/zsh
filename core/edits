@@ -1,7 +1,5 @@
 #! /bin/zsh
 
-AS="$REPOS/arch/settings"
-
 function ed() {
   case $1 in
   '.') $VIM $ZSH_DOTS/core/edits;;
