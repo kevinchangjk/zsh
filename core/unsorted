@@ -35,7 +35,8 @@ function g() {
     echo 'no children directories.'
     return
   fi
-  target=$(echo $res | fzf --height=10 +m --no-mouse)
+  target=$(echo $res | fzf --height=10 +m --no-mouse --reverse --no-info --prompt="  " --color='pointer:2')
+  [[ ${#target} = 0 ]] && return true
   cd $target
 }
 
@@ -59,7 +60,7 @@ function v() {
   done
   string=${string/\\n/}
 
-  target=$(echo $string | fzf --height=10)
+  target=$(echo $string | fzf --height=10 --reverse --no-info)
 
   index=${choices[(ie)$target]}
   [[ $index = 5 ]] && return true

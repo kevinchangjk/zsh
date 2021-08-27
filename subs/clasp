@@ -1,9 +1,0 @@
-#! /bin/zsh
-
-function cdp() {
-  # for telegram run bot
-  CLASH_DEP_ID="AKfycbx_yJXMv7upnKZR5pFuGSIXkV9k34suxH889-A12iWeYMEkQz9FIB4HYsm3a1NTg0Qj"
-  cd $REPOS/HCanoe
-  clasp push
-  clasp deploy --description script.web-app --deploymentId $CLASH_DEP_ID
-}

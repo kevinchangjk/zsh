@@ -1,5 +1,6 @@
 #! /bin/zsh 
 
+alias py="python"
 alias 2code="cd $REPOS/codeforces && rmdir 2> /dev/null */"
 
 function 2today() {

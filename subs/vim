@@ -1,7 +1,0 @@
-#! /bin/zsh
-
-NOTES="$REPOS/notes"
-alias u="cd $REPOS/uni && $VIM -c \"lua require('brew.telescope.file').file_repo()\""
-alias n="$VIM $NOTES/posts/.inbox.md"
-alias t="$VIM -c \"lua require('brew.telescope.custom').todo()\""
-alias lvim="$VIM -S $HOME/.config/nvim/data/sessions/last"

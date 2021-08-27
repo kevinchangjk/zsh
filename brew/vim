@@ -1,0 +1,6 @@
+#! /bin/zsh
+
+NOTES="$REPOS/notes"
+alias n="$VIM $NOTES/posts/.inbox.md"
+alias t="$VIM $NOTES/TODO.md"
+alias lvim="$VIM -S $HOME/.config/nvim/data/sessions/last"

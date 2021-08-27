@@ -1,0 +1,7 @@
+#! /bin/zsh
+
+# dwm-make
+alias dwmm="cd $REPOS/dwm && rm -f config.h && ./build.sh"
+
+# launch dwm
+alias ldwm="startx"

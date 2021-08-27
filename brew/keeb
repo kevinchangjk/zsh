@@ -1,0 +1,4 @@
+#! /bin/zsh
+
+alias mk="cd $REPOS/qmk_firmware && make keebio/iris/rev4:khang"
+alias mkd="cd $REPOS/qmk_firmware && make keebio/iris/rev4:khang:flash"

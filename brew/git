@@ -1,21 +1,11 @@
 #! /bin/zsh
 
-function gl() {
-	if [ "$1" ]; then
-		[ -z "${1//[0-9]}" ] && git log --oneline --graph -n $1
-	else
-		git log --oneline --graph -n 10
-	fi
-
-}
-
 alias gs="git number" # git status
 alias ga="git number add"
 alias gaa="git add --all"
 alias gco="git number checkout"
 alias gb="git branch"
 
-alias gca="git commit --amend -m"
 alias gd="git number diff"
 alias gds="git number diff --staged"
 alias giti="$VIM .gitignore"
@@ -31,49 +21,58 @@ alias gc="git commit"
 alias gau="git add -u"
 alias ga.="git add ."
 
-function gcm() {
-  if [[ "$1" = "" ]]; then
-    git commit
-  else
-    git commit -m $1
-  fi
+function gl() {
+  [ "$1" ] && len=$1 || len=20
+  git log --oneline --graph -n $len
 }
+
+function gcm() {
+  [ "$1" ] && mes="-m $1" || mes=""
+  git commit $mes
+}
+
+function gca() {
+  [ "$1" ] && mes="-m $1" || mes=""
+  git commit --amend $mes
+}
+
 function ags() {
-  MAX_LEN=18
-  blacklist=(
-    uni
-    hcanoe
-    vim-plugins
-  )
+  MAX_LEN=20
+  BLACKLIST=()
   CURRENT=$(pwd)
   for d in $REPOS/*/; do
     cd $d
-    CURRENT_REPO=$(pwd | awk -F/ '{print $NF}')
-    STR_LEN=$(echo -n $CURRENT_REPO | wc -m)
-    [[ ${blacklist[(r)$CURRENT_REPO]} == $CURRENT_REPO ]] && continue
-    gitStatus=$(git status -s)
-    gitRemote=()
+    [ ! -d .git ] && continue # skip if not a git repo
+    REPO_NAME=$(pwd | awk -F/ '{print $NF}')
+    STR_LEN=${#REPO_NAME}
+    [[ ${BLACKLIST[(r)$REPO_NAME]} == $REPO_NAME ]] && continue # if in BLACKLIST, continue
+
+    STATUS=$(git status -s)
+    COMMITS=()
+
     while IFS= read -r line; do
-      gitRemote+=( "$line" )
+      COMMITS+=( "$line" )
     done < <( git cherry -v --abbrev 2> /dev/null )
+
     # uncommitted changes
-    if [ ! -z $gitStatus ]; then
+    if [ "$STATUS" ]; then
       echo $CYAN$(pwd | awk -F/ '{print $NF}')$NORMAL
-      echo $gitStatus
+      echo $STATUS
+
     # unpushed commits
-    elif [ ! -z $gitRemote[1] ]; then
+    elif [ "$COMMITS[1]" ]; then
       echo $CYAN$(pwd | awk -F/ '{print $NF}')$NORMAL
-      for i in $gitRemote[@]; do
+      for i in $COMMITS[@]; do
         pre=$(echo $i | cut -d ' ' -f1)
+        commit=$YELLOW$(echo $i | cut -d ' ' -f2)$NORMAL
         post=$(echo $i | cut -d ' ' -f3-)
-        commit=$(echo $i | cut -d ' ' -f2)
-        commit=$YELLOW${commit}$NORMAL
         echo $pre $commit $post
       done
+
+    # print ok message
     else
-      DOT_LEN=$(echo $(( MAX_LEN - STR_LEN )))
-      PRINT_DOT=$(printf ' %.0s' {1..$DOT_LEN})
-      echo $CYAN$(pwd | awk -F/ '{print $NF}')${NORMAL}$PRINT_DOT${GREEN}"[ok]"$NORMAL
+      SPACES=$(printf ' %.0s' {1..$(echo $(( MAX_LEN - STR_LEN )))})
+      echo $CYAN$(pwd | awk -F/ '{print $NF}')$SPACES${GREEN}"[ok]"
     fi
   done
   cd $CURRENT
@@ -82,48 +81,48 @@ function ags() {
 
 # delete branch with:
 # git branch -d <branch_name>
-#
+
 # delete branch's remote with:
 # git push origin -d <branch_name>
-#
+
 # add remote branch with:
 # git switch <branch_name>
-#
-# 
+
 # add (and clone) submodule with:
 # git submodule add <submodule_name> <opt: dir_name>
 # (this will also add a .gitmodule file)
-#
+
 # when cloning a repo containing submodules,
 # you will get the submodules' directories,
 # but they will be empty
 # so run these:
 # git submodule update --init
-#
+
 # and if these submodules has submodules of their own:
 # git submodule update --init --recursive
-#
+
 # to update submodules:
 # git submodule update --remote <submodule_name>
-#
+
 # or, just run this when cloning:
 # git clone <repo> --recurse-submodules
-#
+
 # change submodule's branch:
 # git config -f .gitmodules submodule.<submodule_name>.branch <branch_name>
-#
-# By default, the `git pull` command recursively fetches submodules changes, as we can see in the output of the first command above. However, it does not *update* the submodules.
-# to finalize the update, run:
+
+# By default, the `git pull` command recursively fetches submodules changes, as
+# we can see in the output of the first command above. However, it does not
+# *update* the submodules.  to finalize the update, run:
+# 
 # git submodule update
-#
+
 # to remove a submodule completely:
 # 0. mv a/submodule a/submodule_tmp
-# 
 # 1. git submodule deinit -f -- a/submodule    
 # 2. rm -rf .git/modules/a/submodule
 # 3. git rm -f a/submodule
 # Note: a/submodule (no trailing slash)
-# 
+ 
 # or, if you want to leave it in your working tree and have done step 0
 # 3.   git rm --cached a/submodule
 # 3bis mv a/submodule_tmp a/submodule
