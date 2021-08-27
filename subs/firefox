@@ -1,7 +1,0 @@
-#! /bin/zsh
-
-function wes() {
-	KEY=$(pass mozilla/key)
-	SECRET=$(pass mozilla/secret)
-	web-ext sign --api-key="$KEY" --api-secret="$SECRET"
-}

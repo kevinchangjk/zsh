@@ -2,6 +2,7 @@
 
 alias ls="exa -a --group-directories-first"
 alias ll="exa -al --group-directories-first"
+
 function lt() {
 	[ -z $1 ] && exa --tree --level=2 && return
 	[ "$1" ] && [ -z "${1//[0-9]}" ] && exa --tree --level=$1 && return
@@ -15,8 +16,8 @@ function lt() {
 alias ct="printf '\033[2J\033[3J\033[1;1H'"
 
 # find
-alias f="find . | ag"
-alias fr="sudo find / | ag"
+alias f="fd . | rg"
+alias fr="sudo fd --color=never --full-path / | rg"
 
 # montinor (current directory)
 alias mon="while; do; clear; lt; sleep 1; done"
@@ -25,14 +26,12 @@ alias mon="while; do; clear; lt; sleep 1; done"
 alias tc="xclip -selection clipboard <"
 
 # fonts
-alias fof="fc-list : font family | ag"
-alias fofs="fc-list : family style | ag"
-alias fol="fc-list | ag"
+# alias fof="fc-list : font family | ag"
+# alias fofs="fc-list : family style | ag"
+# alias fol="fc-list | ag"
 alias kf="kitty + list-fonts --psnames | ag"
 
 # monitors keystrokes
 function eventviewer() {
 	 xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
 }
-
-alias ren="$VIM -c 'Ren'"

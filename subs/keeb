@@ -1,4 +1,0 @@
-#! /bin/zsh
-
-alias mk="make clean dz60:khang"
-alias mkd="make clean dz60:khang:dfu"

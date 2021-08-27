@@ -1,0 +1,4 @@
+#! /bin/zsh
+
+alias gup="pass git push"
+alias zr="source ~/.zshrc"
