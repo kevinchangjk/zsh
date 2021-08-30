@@ -1,8 +1,8 @@
 #! /bin/zsh
 
+# listing files
 alias ls="exa -a --group-directories-first"
 alias ll="exa -al --group-directories-first"
-
 function lt() {
 	[ -z $1 ] && exa --tree --level=2 && return
 	[ "$1" ] && [ -z "${1//[0-9]}" ] && exa --tree --level=$1 && return
@@ -11,6 +11,9 @@ function lt() {
 		[ "$2" ] && [ -z "${2//[0-9]}" ] && exa --tree --level=$2 -- $1 && return
 	fi
 }
+
+# killall
+alias ka="killall"
 
 # clear terminal
 alias ct="printf '\033[2J\033[3J\033[1;1H'"

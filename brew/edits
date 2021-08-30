@@ -2,7 +2,7 @@
 
 function ed() {
   case $1 in
-  '.') $VIM $ZSH_DOTS/core/edits;;
+  '.') $VIM $ZSH_DOTS/brew/edits;;
   'a'|'awesome') $VIM $AS/.config/awesome/rc.lua;;
   'b'|'dwmblocks') $VIM $REPOS/dwm/dwmblocks/blocks.def.h;;
   'd'|'dwm') $VIM $REPOS/dwm/config.def.h;;
