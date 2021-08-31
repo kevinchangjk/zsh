@@ -2,3 +2,4 @@
 
 alias gup="pass git push"
 alias zr="source ~/.zshrc"
+alias z="zathura"
