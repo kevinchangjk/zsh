@@ -1,7 +1,7 @@
 #! /bin/zsh 
 
 # key variables
-OS="linux"
+OS="mac"
 REPOS="$HOME/repos"
 ZSH_DOTS="$REPOS/zsh"
 AS="$REPOS/arch/settings"
@@ -26,5 +26,3 @@ function setup() {
 
 setup
 cd
-clear
-[ "$OS" = "linux" ] && python "$ZSH_DOTS/quote/quotes.py"
