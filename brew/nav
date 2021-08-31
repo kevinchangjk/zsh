@@ -30,8 +30,7 @@ alias 2q="cd $REPOS/qmk_firmware"
 alias 2t="cd $AS/.config/kitty"
 alias 2tel="cd $HOME/.config/nvim/plugged/telescope.nvim/lua/telescope"
 alias 2t.="cd $HOME/.config/kitty"
-alias 2u="cd $REPOS/uni/next/pages"
-alias 2ud="cd $REPOS/uni"
+alias 2uw="cd $REPOS/uni/nightly/website"
 alias 2v="cd $REPOS/neovim"
 alias 2v.="cd $HOME/.config/nvim"
 alias 2vs="cd $REPOS/neovim/sessions"
@@ -39,4 +38,9 @@ alias 2w="cd $REPOS/blog/data/blog"
 alias 2z="cd $REPOS/zsh"
 
 function 2r() {
-  cd $(git rev-parse --show-toplevel) }
+  cd $(git rev-parse --show-toplevel)
+}
+
+function 2u() {
+  cd $REPOS/uni/nightly/modules
+}

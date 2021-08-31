@@ -1,6 +1,10 @@
 #! /bin/zsh
 
 NOTES="$REPOS/notes"
+TODO_DIR="$REPOS/uni/nightly"
+TODO_FILE="todo.md"
+
+TODO=$TODO_DIR/$TODO_FILE
 alias n="$VIM $NOTES/posts/.inbox.md"
-alias t="$VIM $NOTES/TODO.md"
+alias t="$VIM $TODO"
 alias lvim="$VIM -S $HOME/.config/nvim/data/sessions/last"
