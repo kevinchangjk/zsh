@@ -48,7 +48,9 @@ function 2u() {
   TARGET=$(echo $RES | fzf --height=10 +m --no-mouse --reverse --no-info --prompt="  " --color='pointer:2')
 
   case $TARGET in 
-    "") return true;;
+    "")
+      unset RES TARGET MODS
+      return true;;
     "home") cd $BASEDIR..;;
     *) cd $BASEDIR$TARGET;;
   esac
