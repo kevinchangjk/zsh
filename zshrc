@@ -5,7 +5,7 @@ OS="linux"
 REPOS="$HOME/repos"
 ZSH_DOTS="$REPOS/zsh"
 AS="$REPOS/arch/settings"
-VIM="nvim"
+VIM="$HOME/.local/bin/nvim"
 alias vim=$VIM
 [ "$OS" = "linux" ] && GAUSS="/run/media/khang/Gauss"
 
