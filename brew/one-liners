@@ -3,3 +3,8 @@
 alias gup="pass git push"
 alias zr="source ~/.zshrc"
 alias z="zathura"
+function vf() {
+  q=$(fd --type file --no-ignore | fzf)
+  [[ -z $q ]] && return
+  vim $q
+}
