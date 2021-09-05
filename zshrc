@@ -7,6 +7,9 @@ ZSH_DOTS="$REPOS/zsh"
 AS="$REPOS/arch/settings"
 VIM="$HOME/.local/bin/nvim"
 alias vim=$VIM
+function nvim() {
+  echo "use \`vim\`. it's faster."
+}
 [ "$OS" = "linux" ] && GAUSS="/run/media/khang/Gauss"
 
 # zsh automagic completion
