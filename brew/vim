@@ -7,4 +7,9 @@ TODO_FILE="todo.md"
 TODO=$TODO_DIR/$TODO_FILE
 alias n="$VIM $NOTES/posts/.inbox.md"
 alias t="$VIM $TODO"
-alias lvim="$VIM -S $HOME/.config/nvim/data/sessions/last"
+
+function vf() {
+  q=$(fd --type file --no-ignore | fzf)
+  [[ -z $q ]] && return
+  vim $q
+}

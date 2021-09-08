@@ -1,0 +1,14 @@
+#! /bin/zsh
+
+function kh() {
+  echo "kitty_mod               cmd+ctrl"
+  echo "ctrl + shift + equal    change_font_size     all   +0.5"
+  echo "ctrl + shift + minus    change_font_size     all   -0.5"
+  echo "ctrl + shift + r        change_font_size     all    0"
+  echo "cmd + t                 new_tab"
+  echo "cmd + w                 close_tab"
+  echo "kitty_mod + enter       new_window"
+  echo "kitty_mod + w           close_window"
+  echo "kitty_mod + r           start_resizing_window"
+  echo "kitty_mod + ,           load_config_file"
+}
