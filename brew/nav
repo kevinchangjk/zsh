@@ -4,7 +4,7 @@ alias out="cd .."
 alias back="cd -"
 
 alias rep="cd $REPOS"
-alias 2.="nvim $REPOS/zsh/brew/nav"
+alias 2.="$VIM $REPOS/zsh/brew/nav"
 alias 2a="cd $REPOS/arch"
 alias 2ap="cd $REPOS/arch/packages"
 alias 2asc="cd $AS/.config"
