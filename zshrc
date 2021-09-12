@@ -1,24 +1,20 @@
 #! /bin/zsh 
 
 # key variables
-OS="linux"
 REPOS="$HOME/repos"
 ZSH_DOTS="$REPOS/zsh"
 AS="$REPOS/arch/settings"
-VIM="$HOME/.local/bin/nvim"
-alias vim=$VIM
-function nvim() {
-  echo "use \`vim\`. it's faster."
-}
-[ "$OS" = "linux" ] && GAUSS="/run/media/khang/Gauss"
+[ `uname` = "Linux" ] && GAUSS="/run/media/khang/Gauss"
 
 # zsh automagic completion
 autoload -U compinit
 compinit
 
 function setup() {
-  sourceDirs=(core brew)
-  [ "$OS" = "linux" ] && sourceDirs+=(linux)
+  sourceDirs=()
+  [ `uname` = "Linux" ] && sourceDirs+=(linux)
+  [ `uname` = "Darwin" ] && sourceDirs+=(mac)
+  sourceDirs+=(core brew)
   for d in $sourceDirs[@]; do
     fs=($(fd --type file --base-directory=$ZSH_DOTS/$d))
     for f in $fs[@]; do
@@ -30,4 +26,4 @@ function setup() {
 setup
 cd
 clear
-[ "$OS" = "linux" ] && python "$ZSH_DOTS/quote/quotes.py"
+[ `uname` = "Linux" ] && python "$ZSH_DOTS/quote/quotes.py"
