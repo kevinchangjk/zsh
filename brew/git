@@ -27,13 +27,19 @@ function gl() {
 }
 
 function gcm() {
-  [ "$1" ] && mes="-m $1" || mes=""
-  git commit $mes
+  if [ "$1" ]; then
+    git commit -m $1
+  else
+    git commit
+  fi
 }
 
 function gca() {
-  [ "$1" ] && mes="-m $1" || mes=""
-  git commit --amend $mes
+  if [ "$1" ]; then
+    git commit --amend -m $1
+  else
+    git commit --amend
+  fi
 }
 
 function ags() {
