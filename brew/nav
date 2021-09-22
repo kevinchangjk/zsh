@@ -60,7 +60,7 @@ function 2u() {
 
 
 function g() {
-  res=$(fd -t d)
+  res=$(fd -t d --hidden)
   if [[ ${#res[@]} = 0 ]] then
     echo 'no children directories.'
     return
