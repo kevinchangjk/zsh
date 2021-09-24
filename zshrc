@@ -26,4 +26,4 @@ function setup() {
 setup
 cd
 clear
-[ `uname` = "Linux" ] && python "$ZSH_DOTS/quote/quotes.py"
+[ `uname` = "Linux" ] && python "$ZSH_DOTS/quote/quotes.py" || return true
