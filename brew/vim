@@ -6,7 +6,6 @@ TODO_FILE="todo.md"
 
 TODO=$TODO_DIR/$TODO_FILE
 alias n="$VIM $NOTES/posts/.inbox.md"
-alias l="$VIM $NOTES/posts/d/lq"
 alias t="$VIM $TODO"
 
 function vf() {
