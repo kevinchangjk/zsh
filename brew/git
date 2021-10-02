@@ -85,42 +85,12 @@ function ags() {
   return true
 }
 
-# delete branch with:
+# delete branch {{{
 # git branch -d <branch_name>
-
-# delete branch's remote with:
+# }}}
+# delete remote branch {{{
 # git push origin -d <branch_name>
-
-# add remote branch with:
-# git switch <branch_name>
-
-# add (and clone) submodule with:
-# git submodule add <submodule_name> <opt: dir_name>
-# (this will also add a .gitmodule file)
-
-# when cloning a repo containing submodules,
-# you will get the submodules' directories,
-# but they will be empty
-# so run these:
-# git submodule update --init
-
-# and if these submodules has submodules of their own:
-# git submodule update --init --recursive
-
-# to update submodules:
-# git submodule update --remote <submodule_name>
-
-# or, just run this when cloning:
-# git clone <repo> --recurse-submodules
-
-# change submodule's branch:
-# git config -f .gitmodules submodule.<submodule_name>.branch <branch_name>
-
-# By default, the `git pull` command recursively fetches submodules changes, as
-# we can see in the output of the first command above. However, it does not
-# *update* the submodules.  to finalize the update, run:
-# 
-# git submodule update
+# }}}
 
 # to remove a submodule completely:
 # 0. mv a/submodule a/submodule_tmp
@@ -131,4 +101,4 @@ function ags() {
  
 # or, if you want to leave it in your working tree and have done step 0
 # 3.   git rm --cached a/submodule
-# 3bis mv a/submodule_tmp a/submodule
+# 3b.  mv a/submodule_tmp a/submodule
