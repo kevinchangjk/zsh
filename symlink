@@ -1,0 +1,5 @@
+#! /bin/zsh
+
+ZSH_DOTS="$HOME/repos/zsh"
+ln -sf $ZSH_DOTS/history $HOME/.zsh_history
+ln -sf $ZSH_DOTS/zshrc $HOME/.zshrc
