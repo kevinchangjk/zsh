@@ -12,6 +12,7 @@ alias giti="$VIM .gitignore"
 alias gr="git number reset"
 alias gitm="$VIM .gitmodules"
 alias gp="git number -c $VIM" # git preview
+alias gcan="git commit --amend --no-edit"
 
 alias gap="git number add -p"
 alias gms="git merge --squash" # squash diff into one commit
