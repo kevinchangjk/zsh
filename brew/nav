@@ -3,6 +3,7 @@
 alias out="cd .."
 alias back="cd -"
 
+# doc_start
 alias rep="cd $REPOS"
 alias 2.="$VIM $REPOS/zsh/brew/nav"
 alias 2a="cd $REPOS/arch"
@@ -38,7 +39,16 @@ alias 2v="cd $REPOS/neovim"
 alias 2v.="cd $HOME/.config/nvim"
 alias 2vs="cd $REPOS/neovim/sessions"
 alias 2w="cd $REPOS/blog/data/blog"
-alias 2z="cd $REPOS/zsh"
+alias 2z="cd $ZSH_DOTS"
+# doc_end
+
+function 2,() {
+  cat $ZSH_DOTS/brew/nav \
+    | sed -n '/^# doc_start/,/^# doc_end/{p;/^# doc_end/q}' \
+    | sed 's/alias //g' \
+    | head -n -1 \
+    | tail -n +2
+}
 
 function 2r() {
   cd $(git rev-parse --show-toplevel)
