@@ -1,0 +1,17 @@
+ln -sf $PWD/history ~/.zsh_history
+ls
+cp ~/.local/bin/symlink .
+ls
+vim symlink
+./symlink
+ls
+vim symlink
+./symlink
+ls
+cd
+ls
+ls
+history -E
+ls
+2z
+gs
