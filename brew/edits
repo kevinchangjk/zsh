@@ -7,14 +7,14 @@ function ed() {
   'b'|'dwmblocks') $VIM $REPOS/dwm/dwmblocks/blocks.def.h;;
   'd'|'dwm') $VIM $REPOS/dwm/config.def.h;;
   'g'|'git') $VIM $HOME/.gitconfig;;
-  'i'|'imwheel') $VIM $AS/dotfiles/.imwheelrc;;
+  'i'|'imwheel') $VIM $AS/home/.imwheelrc;;
   'k'|'keeb') cd $REPOS/qmk_firmware && $VIM keyboards/keebio/iris/keymaps/khang/keymap.c;;
   'n'|'dunst') $VIM $AS/.config/dunst/dunstrc;;
   'p'|'picom') $VIM $AS/.config/picom/picom.conf;;
   'r'|'rofi') $VIM $AS/.config/rofi/config.rasi;;
   't'|'kitty') $VIM $AS/.config/kitty/kitty.conf;;
   'v'|'nvim') $VIM $REPOS/neovim/init.lua;;
-  'x'|'xinit') $VIM $AS/dotfiles/.xinitrc;;
+  'x'|'xinit') $VIM $AS/home/.xinitrc;;
   'z'|'zsh') $VIM $REPOS/zsh/zshrc;;
   'al'|'alacritty') $VIM $AS/.config/alacritty/alacritty.yml;;
   *) echo "nothing happened.";;
