@@ -24,6 +24,7 @@ def prettify(raw):
     d = {}
     csv = ['Time, Command\n']
     for i in raw:
+        print(i)
         sse = int(i[1]) # seconds since epoch
         ts = str(datetime.datetime.utcfromtimestamp(sse))
         cmd = i[2].split(';')[1]
