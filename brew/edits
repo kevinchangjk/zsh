@@ -14,6 +14,7 @@ function ed() {
   'r'|'rofi') $VIM $AS/.config/rofi/config.rasi;;
   't'|'kitty') $VIM $AS/.config/kitty/kitty.conf;;
   'v'|'nvim') $VIM $REPOS/neovim/init.lua;;
+  'vm') $VIM $REPOS/neovim/plugged/vim-markdown/syntax/markdown.vim;;
   'x'|'xinit') $VIM $AS/home/.xinitrc;;
   'z'|'zsh') $VIM $REPOS/zsh/zshrc;;
   'al'|'alacritty') $VIM $AS/.config/alacritty/alacritty.yml;;
