@@ -4,11 +4,11 @@
 alias ls="exa -a --group-directories-first"
 alias ll="exa -al --group-directories-first"
 function lt() {
-	[ -z $1 ] && exa --tree --level=2 && return
-	[ "$1" ] && [ -z "${1//[0-9]}" ] && exa --tree --level=$1 && return
+	[ -z $1 ] && exa -a --tree --level=2 && return
+	[ "$1" ] && [ -z "${1//[0-9]}" ] && exa -a --tree --level=$1 && return
 	if [ -d $1 ]; then
-		[ -z $2 ] && exa --tree --level=2 -- $1 && return
-		[ "$2" ] && [ -z "${2//[0-9]}" ] && exa --tree --level=$2 -- $1 && return
+		[ -z $2 ] && exa -a --tree --level=2 -- $1 && return
+		[ "$2" ] && [ -z "${2//[0-9]}" ] && exa -a --tree --level=$2 -- $1 && return
 	fi
 }
 
