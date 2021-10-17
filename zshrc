@@ -4,6 +4,7 @@
 REPOS="$HOME/repos"
 ZSH_DOTS="$REPOS/zsh"
 AS="$REPOS/arch/settings"
+
 [ `uname` = "Linux" ] && GAUSS="/run/media/khang/Gauss"
 
 # zsh automagic completion
@@ -12,9 +13,9 @@ compinit
 
 function setup() {
   sourceDirs=()
+  sourceDirs+=(core brew)
   [ `uname` = "Linux" ] && sourceDirs+=(linux)
   [ `uname` = "Darwin" ] && sourceDirs+=(mac)
-  sourceDirs+=(core brew)
   for d in $sourceDirs[@]; do
     fs=($(fd --type file --base-directory=$ZSH_DOTS/$d))
     for f in $fs[@]; do
