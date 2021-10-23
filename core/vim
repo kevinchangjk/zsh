@@ -1,0 +1,6 @@
+#! /bin/zsh
+
+function nvim() { echo "use \`vim\`. it's faster." }
+[ `uname` = "Linux" ] && VIM="$HOME/.local/bin/nvim"
+[ `uname` = "Darwin" ] && VIM="/usr/local/bin/nvim"
+alias vim=$VIM
