@@ -16,10 +16,8 @@ function setup() {
   [ `uname` = "Darwin" ] && sourceDirs+=(mac)
   sourceDirs+=(core brew)
   for d in $sourceDirs[@]; do
-    fs=($(fd --type file --base-directory=$ZSH_DOTS/$d))
-    for f in $fs[@]; do
-      source "$ZSH_DOTS/$d/$f";
-    done
+    fs=($(find $ZSH_DOTS/$d -type f))
+    for f in $fs[@]; do source "$f"; done
   done
 }
 
