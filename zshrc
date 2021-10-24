@@ -12,9 +12,9 @@ compinit
 
 function setup() {
   sourceDirs=()
-  sourceDirs+=(core brew)
   [ `uname` = "Linux" ] && sourceDirs+=(linux)
   [ `uname` = "Darwin" ] && sourceDirs+=(mac)
+  sourceDirs+=(core brew)
   for d in $sourceDirs[@]; do
     fs=($(fd --type file --base-directory=$ZSH_DOTS/$d))
     for f in $fs[@]; do
@@ -24,6 +24,5 @@ function setup() {
 }
 
 setup
-cd
-# clear
+clear && cd
 # [ `uname` = "Linux" ] && python "$ZSH_DOTS/quote/quotes.py" || return true
