@@ -24,3 +24,5 @@ function setup() {
 setup
 clear && cd
 # [ `uname` = "Linux" ] && python "$ZSH_DOTS/quote/quotes.py" || return true
+
+alias luamake=/Users/khang/files/cli-deps/lua-language-server/3rd/luamake/luamake
