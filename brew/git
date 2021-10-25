@@ -45,7 +45,7 @@ function gca() {
 
 function ags() {
   MAX_LEN=20
-  BLACKLIST=()
+  BLACKLIST=(uni)
   CURRENT=$(pwd)
   for d in $REPOS/*/; do
     cd $d
