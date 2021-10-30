@@ -45,11 +45,25 @@ function gca() {
 
 function ags() {
   MAX_LEN=20
-  BLACKLIST=(uni qmk_firmware minecraft)
+  BLACKLIST=(
+    uni
+    qmk_firmware
+    minecraft
+    books
+    dwm
+  )
   CURRENT=$(pwd)
-  for d in $REPOS/*/; do
+
+  # create scan list
+  SCANLIST=()
+  for d in $REPOS/*/; do SCANLIST+=("$d") done
+  SCANLIST+=(
+    "$REPOS/uni/nightly"
+  )
+
+  for d in $SCANLIST; do
     cd $d
-    [ ! -d .git ] && continue # skip if not a git repo
+    # [ ! -d .git ] && continue # skip if not a git repo
     REPO_NAME=$(pwd | awk -F/ '{print $NF}')
     STR_LEN=${#REPO_NAME}
     [[ ${BLACKLIST[(r)$REPO_NAME]} == $REPO_NAME ]] && continue # if in BLACKLIST, continue
