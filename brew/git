@@ -45,7 +45,7 @@ function gca() {
 
 function ags() {
   MAX_LEN=20
-  BLACKLIST=(uni)
+  BLACKLIST=(uni qmk_firmware minecraft)
   CURRENT=$(pwd)
   for d in $REPOS/*/; do
     cd $d

@@ -1,4 +1,0 @@
-#! /bin/zsh
-
-alias ma1="$REPOS/uni/nightly/modules/MA1100/session"
-alias ma2="$REPOS/uni/nightly/modules/MA2001/session"

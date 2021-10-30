@@ -1,0 +1,22 @@
+#! /bin/zsh
+
+function MA2001_ts-10() {
+  open $REPOS/uni/nightly/modules/MA2001/pdfs/tutorial-sets/ts-10.pdf &>/dev/null
+  vim $REPOS/uni/nightly/modules/MA2001/work/ts-10.math
+}
+
+function edit-sessions() {
+  vim $REPOS/zsh/brew/sessions
+}
+
+function rs() {
+  F_LIST=$(rg function $REPOS/zsh/brew/sessions | rg -v "rs()" | sed "s/function //g" | sed "s/() {//g")
+  SESSION=$(echo $F_LIST | fzf \
+    --height=10 +m \
+    --no-mouse \
+    --reverse --no-info \
+    --prompt="  " \
+    --color='pointer:2')
+  [[ $SESSION = "" ]] && echo "nothing selected. have a good day." && return true
+  eval $SESSION
+}
