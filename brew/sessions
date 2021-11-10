@@ -1,8 +1,24 @@
 #! /bin/zsh
 
+function MA2001_hw-4() {
+  cd $REPOS/uni/nightly/modules/MA2001/work/hw-4
+  open $REPOS/uni/nightly/modules/MA2001/pdfs/homework/hw-4.pdf &>/dev/null
+  D=$REPOS/uni/nightly/modules/MA2001/work/hw-4/
+  files=(
+    $D/3.md
+    $D/.pure.m
+    )
+  vim $files
+}
+
 function MA2001_ts-10() {
   open $REPOS/uni/nightly/modules/MA2001/pdfs/tutorial-sets/ts-10.pdf &>/dev/null
   vim $REPOS/uni/nightly/modules/MA2001/work/ts-10.math
+}
+
+function MA2001_notes() {
+  open $REPOS/books/linear-algebra-concepts-and-techniques-on-euclidean-spaces.pdf &>/dev/null
+  vim $REPOS/uni/nightly/modules/MA2001/linear-algebra.math
 }
 
 function edit-sessions() {
