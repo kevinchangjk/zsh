@@ -10,3 +10,4 @@ alias i="$VIM $REPOS/blog/data/ideas"
 alias gcal="gcalcli"
 unsetopt BEEP
 alias pi="ssh khang@192.168.1.21"
+alias pia="ssh pi@192.168.1.21"
