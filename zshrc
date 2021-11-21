@@ -22,9 +22,6 @@ function setup() {
 }
 
 setup
-clear && cd
+printf '\033[2J\033[3J\033[1;1H' # clears screen
+cd
 # [ `uname` = "Linux" ] && python "$ZSH_DOTS/quote/quotes.py" || return true
-
-# BEGIN_KITTY_SHELL_INTEGRATION
-if test -e "$HOME/Applications/kitty.app/Contents/Resources/kitty/shell-integration/kitty.zsh"; then source "$HOME/Applications/kitty.app/Contents/Resources/kitty/shell-integration/kitty.zsh"; fi
-# END_KITTY_SHELL_INTEGRATION
