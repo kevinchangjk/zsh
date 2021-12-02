@@ -49,6 +49,7 @@ function ags() {
     uni
     qmk_firmware
     minecraft
+    hcanoe-telegram
     books
     dwm
   )
@@ -59,6 +60,7 @@ function ags() {
   for d in $REPOS/*/; do SCANLIST+=("$d") done
   SCANLIST+=(
     "$REPOS/uni/nightly"
+    "$REPOS/hcanoe-telegram/repo"
   )
 
   for d in $SCANLIST; do
