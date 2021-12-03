@@ -58,10 +58,11 @@ function 2r() {
 
 function 2u() {
   BASEDIR="$REPOS/uni/nightly/modules/"
-  MODS=$(find $BASEDIR\
-    -type d \
-    -depth 1 \
-    -exec basename {} \;)
+  MODS=$(fd \
+    -t d \
+    -d 1 \
+    --base-directory $BASEDIR \
+    --exec basename)
   RES+="home\n$MODS"
   TARGET=$(echo $RES | fzf \
     --height=10 +m \
