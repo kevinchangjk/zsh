@@ -81,15 +81,3 @@ function 2u() {
   esac
   unset RES TARGET MODS
 }
-
-
-function g() {
-  res=$(fd -t d --hidden)
-  if [[ ${#res[@]} = 0 ]] then
-    echo 'no children directories.'
-    return
-  fi
-  target=$(echo $res | fzf --height=10 +m --no-mouse --reverse --no-info --prompt="  " --color='pointer:2')
-  [[ ${#target} = 0 ]] && return true
-  cd $target
-}
