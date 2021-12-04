@@ -1,12 +1,14 @@
 #! /bin/zsh
 
-function nvim() { echo "use \`vim\`. it's faster." }
+# linux
 [ `uname` = "Linux" ] && VIM="$HOME/.local/bin/nvim"
+
+# mac
 if [ `uname` = "Darwin" ]; then
   if [[ -f $HOME/.local/bin/nvim ]]; then
     VIM="$HOME/.local/bin/nvim"
   else
-    VIM="/usr/local/bin/nvim"
+    VIM="/opt/homebrew/bin/nvim"
   fi
 fi
 alias vim=$VIM

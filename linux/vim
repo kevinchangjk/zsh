@@ -1,5 +1,0 @@
-function nvim() {
-  echo "use \`vim\`. it's faster."
-}
-VIM="$HOME/.local/bin/nvim"
-alias vim=$VIM

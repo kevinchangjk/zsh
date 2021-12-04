@@ -7,10 +7,7 @@ alias back="cd -"
 alias rep="cd $REPOS"
 alias 2.="$VIM $REPOS/zsh/brew/nav"
 alias 2a="cd $REPOS/arch"
-alias 2ap="cd $REPOS/arch/packages"
 alias 2asc="cd $AS/.config"
-alias 2ase="cd $AS/etc"
-alias 2asl="cd $REPOS/arch/scripts/local-bin"
 alias 2b="cd $REPOS/blog/data"
 alias 2bs="cd $REPOS/blog/data/snippets"
 alias 2bb="cd $REPOS/blog/data/blog"
@@ -45,25 +42,35 @@ alias 2z="cd $ZSH_DOTS"
 # doc_end
 
 function 2,() {
-  cat $ZSH_DOTS/brew/nav \
-    | sed -n '/^# doc_start/,/^# doc_end/{p;/^# doc_end/q}' \
-    | sed 's/alias //g' \
-    | head -n -1 \
-    | tail -n +2
+  START="# doc_start"
+  END="# doc_end"
+  [ `uname` = "Linux" ] && cat $ZSH_DOTS/brew/nav \
+    | sed -n "/^# doc_start/,/^$START/{p;/^$END/q}" \
+    | sed "s/alias //g"
+  [ `uname` = "Darwin" ] && cat $ZSH_DOTS/brew/nav \
+    | sed -n "/^# doc_start/,/^$START/p;/^$END/q" \
+    | sed "s/alias //g"
+  unset START END
+  return true
 }
 
+# goes to root of git repo
 function 2r() {
   cd $(git rev-parse --show-toplevel)
 }
 
+# to university folder
 function 2u() {
   BASEDIR="$REPOS/uni/nightly/modules/"
-  MODS=$(fd \
+
+  MODS=$(find \
     -t d \
     -d 1 \
     --base-directory $BASEDIR \
     --exec basename)
+
   RES+="home\n$MODS"
+
   TARGET=$(echo $RES | fzf \
     --height=10 +m \
     --no-mouse \
@@ -79,5 +86,23 @@ function 2u() {
     "home") cd $BASEDIR..;;
     *) cd $BASEDIR$TARGET;;
   esac
+
   unset RES TARGET MODS
+}
+
+# generic navigation
+# g for jump
+function g() {
+  TARGET=$(fd \
+    -t d \
+    -d 3 \
+    | sed 's/^..//' \
+    | fzf \
+    --height=10 +m \
+    --no-mouse \
+    --reverse \
+    --no-info \
+    --prompt="  " \
+    --color='pointer:2')
+  cd $TARGET
 }

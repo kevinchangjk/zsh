@@ -22,11 +22,13 @@ alias gc="git commit"
 alias gau="git add -u"
 alias ga.="git add ."
 
+# git log
 function gl() {
   [ "$1" ] && len=$1 || len=20
   git log --oneline --graph -n $len
 }
 
+# git commit
 function gcm() {
   if [ "$1" ]; then
     git commit -m $1
@@ -35,6 +37,7 @@ function gcm() {
   fi
 }
 
+# git commit --amend
 function gca() {
   if [ "$1" ]; then
     git commit --amend -m $1
@@ -43,6 +46,7 @@ function gca() {
   fi
 }
 
+# all git-status
 function ags() {
   MAX_LEN=20
   BLACKLIST=(
@@ -102,18 +106,18 @@ function ags() {
   return true
 }
 
+# the laziest git function ever
 function gq() {
   git add .
   git commit -m 'up'
   git push
 }
 
-# delete branch {{{
+# delete branch
 # git branch -d <branch_name>
-# }}}
-# delete remote branch {{{
+
+# delete remote branch
 # git push origin -d <branch_name>
-# }}}
 
 # to remove a submodule completely:
 # 0. mv a/submodule a/submodule_tmp

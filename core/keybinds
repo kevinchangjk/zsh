@@ -1,4 +1,0 @@
-#! /bin/zsh
-
-bindkey "^[[3~" delete-char
-bindkey '^[[Z' reverse-menu-complete

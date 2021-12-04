@@ -13,7 +13,7 @@ compinit
 function setup() {
   sourceDirs=()
   [ `uname` = "Linux" ] && sourceDirs+=(linux)
-  [ `uname` = "Darwin" ] && sourceDirs+=(mac)
+  # [ `uname` = "Darwin" ] && sourceDirs+=(mac)
   sourceDirs+=(core brew)
   for d in $sourceDirs[@]; do
     fs=($(find $ZSH_DOTS/$d -type f))

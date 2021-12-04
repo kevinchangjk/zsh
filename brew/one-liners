@@ -1,13 +1,21 @@
 #! /bin/zsh
 
+# aliases
+alias ct="printf '\033[2J\033[3J\033[1;1H'" # clear terminal
 alias gup="pass git push"
-alias zr="exec $SHELL -l"
-alias z="zathura"
+alias ka="killall"
+alias mon="while; do; clear; lt; sleep 1; done" # monitor directory
 alias oc="octave"
-alias yd="yarn dev"
-alias yb="yarn build"
-alias i="$VIM $REPOS/blog/data/ideas"
-alias gcal="gcalcli"
-unsetopt BEEP
 alias pi="ssh khang@192.168.1.21"
 alias pia="ssh pi@192.168.1.21"
+alias py="python3"
+alias yb="yarn build"
+alias yd="yarn dev"
+alias zr="exec $SHELL -l" # reloads shell
+
+# keybinds
+bindkey "^[[3~" delete-char
+bindkey '^[[Z' reverse-menu-complete
+
+# options
+unsetopt BEEP
