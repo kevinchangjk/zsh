@@ -102,6 +102,12 @@ function ags() {
   return true
 }
 
+function gq() {
+  git add .
+  git commit -m 'up'
+  git push
+}
+
 # delete branch {{{
 # git branch -d <branch_name>
 # }}}
