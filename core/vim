@@ -11,4 +11,6 @@ if [ `uname` = "Darwin" ]; then
     VIM="/opt/homebrew/bin/nvim"
   fi
 fi
+
 alias vim=$VIM
+alias v="nvim"

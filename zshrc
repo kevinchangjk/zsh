@@ -1,9 +1,10 @@
 #! /bin/zsh 
 
 # key variables
-REPOS="$HOME/repos"
+REPOS="$HOME/ripples"
 ZSH_DOTS="$REPOS/zsh"
-AS="$REPOS/arch/settings"
+ONE_KCJK="$HOME/OneDrive"
+# AS="$REPOS/arch/settings"
 [ `uname` = "Linux" ] && GAUSS="/run/media/khang/Gauss"
 
 # zsh automagic completion
