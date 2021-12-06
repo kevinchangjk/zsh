@@ -63,7 +63,7 @@ function 2r() {
 function 2u() {
   BASEDIR="$REPOS/uni/nightly/modules/"
 
-  MODS=$(find \
+  MODS=$(fd \
     -t d \
     -d 1 \
     --base-directory $BASEDIR \
