@@ -42,6 +42,7 @@ alias 2vs="cd $REPOS/neovim/sessions"
 alias 2z="cd $ZSH_DOTS"
 alias 2o="cd $ONE_KCJK/KCJK"
 alias 2g="cd $ONE_KCJK/KCJK/'Good Shit'" 
+alias 2m="cd $REPOS/misc"
 # doc_end
 
 function 2,() {
