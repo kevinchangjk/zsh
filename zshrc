@@ -3,8 +3,8 @@
 # key variables
 REPOS="$HOME/ripples"
 ZSH_DOTS="$REPOS/zsh"
+VIM_CONFIG="$ZSH_DOTS/vim"
 ONE_KCJK="$HOME/OneDrive"
-# AS="$REPOS/arch/settings"
 [ `uname` = "Linux" ] && GAUSS="/run/media/khang/Gauss"
 
 # zsh automagic completion

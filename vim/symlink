@@ -1,0 +1,6 @@
+#! /bin/zsh
+
+REPOS="$HOME/ripples"
+ZSH_DOTS="$REPOS/zsh"
+VIM_CONFIG="$ZSH_DOTS/vim"
+ln -sf $VIM_CONFIG/vimrc $HOME/.nvimrc

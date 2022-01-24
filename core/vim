@@ -13,4 +13,4 @@ if [ `uname` = "Darwin" ]; then
 fi
 
 alias vim=$VIM
-alias v="nvim"
+alias v="nvim -N -u $HOME/.nvimrc"
