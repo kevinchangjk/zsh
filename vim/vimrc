@@ -21,6 +21,7 @@ Plug 'flazz/vim-colorschemes'
 Plug 'jremmen/vim-ripgrep'
 Plug 'leafgarland/typescript-vim'
 Plug 'mbbill/undotree'
+Plug 'tomlion/vim-solidity'
 
 call plug#end()
 
