@@ -1,16 +1,4 @@
 #! /bin/zsh
 
-# linux
-[ `uname` = "Linux" ] && VIM="$HOME/.local/bin/nvim"
-
-# mac
-if [ `uname` = "Darwin" ]; then
-  if [[ -f $HOME/.local/bin/nvim ]]; then
-    VIM="$HOME/.local/bin/nvim"
-  else
-    VIM="/opt/homebrew/bin/nvim"
-  fi
-fi
-
-alias vim=$VIM
-alias v="nvim -N -u $HOME/.nvimrc"
+alias vim="nvim -N -u $HOME/.nvimrc"
+alias v="vim"
