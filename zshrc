@@ -1,11 +1,10 @@
 #! /bin/zsh 
 
 # key variables
-REPOS="$HOME/ripples"
-ZSH_DOTS="$REPOS/zsh"
-VIM_CONFIG="$ZSH_DOTS/vim"
-ONE_KCJK="$HOME/OneDrive"
-[ `uname` = "Linux" ] && GAUSS="/run/media/khang/Gauss"
+export REPOS="$HOME/ripples"
+export ZSH_DOTS="$REPOS/zsh"
+export VIM_CONFIG="$HOME/.config/nvim"
+export ONE_KCJK="$HOME/OneDrive"
 
 # zsh automagic completion
 autoload -U compinit

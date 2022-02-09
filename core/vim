@@ -1,4 +1,0 @@
-#! /bin/zsh
-
-alias vim="nvim -N -u $HOME/.nvimrc"
-alias v="vim"

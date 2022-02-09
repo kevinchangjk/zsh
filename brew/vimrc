@@ -1,0 +1,59 @@
+" setting backup; accessible through ~/.backup directory
+set backup
+set backupdir=~/.backup
+
+" basic settings
+syntax on
+set ruler
+set autoindent
+set smartindent
+set shiftwidth=2
+set tabstop=2 softtabstop=2
+set expandtab
+set belloff=all
+
+filetype plugin indent on
+
+" plugins
+packloadall
+call plug#begin('$VIM_CONFIG/plugged')
+
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzy-native.nvim'
+Plug 'flazz/vim-colorschemes'
+Plug 'BurntSushi/ripgrep'
+Plug 'jremmen/vim-ripgrep'
+Plug 'leafgarland/typescript-vim'
+Plug 'mbbill/undotree'
+Plug 'tomlion/vim-solidity'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'prettier/vim-prettier', {
+      \'do': 'yarn install --frozen-lockfile --production' }  
+
+call plug#end()
+
+" own configurations
+inoremap <Esc> <Esc>`^
+set relativenumber
+set nu
+set nowrap
+set incsearch
+set nohlsearch
+set hidden
+set scrolloff=16
+set updatetime=50
+set signcolumn=yes
+
+" colour scheme
+set colorcolumn=80
+highlight ColorColumn ctermbg=0 guibg=lightgrey
+color molokai
+
+" telescope
+let mapleader = " "
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>

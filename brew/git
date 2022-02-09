@@ -8,9 +8,9 @@ alias gb="git branch"
 
 alias gd="git number diff"
 alias gds="git number diff --staged"
-alias giti="$VIM .gitignore"
+alias giti="v .gitignore"
 alias gr="git number reset"
-alias gitm="$VIM .gitmodules"
+alias gitm="v .gitmodules"
 # alias gp="git number -c $VIM" # git preview
 alias gp="git push"
 alias gcan="git commit --amend --no-edit"
