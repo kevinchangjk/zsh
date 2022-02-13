@@ -47,66 +47,6 @@ function gca() {
   fi
 }
 
-# all git-status
-function ags() {
-  MAX_LEN=20
-  BLACKLIST=(
-    uni
-    qmk_firmware
-    minecraft
-    hcanoe-telegram
-    books
-    dwm
-  )
-  CURRENT=$(pwd)
-
-  # create scan list
-  SCANLIST=()
-  for d in $REPOS/*/; do SCANLIST+=("$d") done
-  SCANLIST+=(
-    "$REPOS/uni/nightly"
-    "$REPOS/hcanoe-telegram/repo"
-  )
-
-  for d in $SCANLIST; do
-    cd $d
-    # [ ! -d .git ] && continue # skip if not a git repo
-    REPO_NAME=$(pwd | awk -F/ '{print $NF}')
-    STR_LEN=${#REPO_NAME}
-    [[ ${BLACKLIST[(r)$REPO_NAME]} == $REPO_NAME ]] && continue # if in BLACKLIST, continue
-
-    STATUS=$(git status -s)
-    COMMITS=()
-
-    while IFS= read -r line; do
-      COMMITS+=( "$line" )
-    done < <( git cherry -v --abbrev 2> /dev/null )
-
-    # uncommitted changes
-    if [ "$STATUS" ]; then
-      echo $CYAN$(pwd | awk -F/ '{print $NF}')$NORMAL
-      echo $STATUS
-
-    # unpushed commits
-    elif [ "$COMMITS[1]" ]; then
-      echo $CYAN$(pwd | awk -F/ '{print $NF}')$NORMAL
-      for i in $COMMITS[@]; do
-        pre=$(echo $i | cut -d ' ' -f1)
-        commit=$YELLOW$(echo $i | cut -d ' ' -f2)$NORMAL
-        post=$(echo $i | cut -d ' ' -f3-)
-        echo $pre $commit $post
-      done
-
-    # print ok message
-    else
-      SPACES=$(printf ' %.0s' {1..$(echo $(( MAX_LEN - STR_LEN )))})
-      echo $CYAN$(pwd | awk -F/ '{print $NF}')$SPACES${GREEN}"[ok]"
-    fi
-  done
-  cd $CURRENT
-  return true
-}
-
 # the laziest git function ever
 function gq() {
   git add .

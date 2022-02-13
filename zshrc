@@ -12,7 +12,7 @@ compinit
 
 function setup() {
   sourceDirs=()
-  [ `uname` = "Linux" ] && sourceDirs+=(linux)
+  # [ `uname` = "Linux" ] && sourceDirs+=(linux)
   # [ `uname` = "Darwin" ] && sourceDirs+=(mac)
   sourceDirs+=(core brew)
   for d in $sourceDirs[@]; do
