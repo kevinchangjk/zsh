@@ -4,6 +4,10 @@ alias out="cd .."
 alias back="cd -"
 alias i2="open"
 
+# checkpoint declarations
+export ONE_KCJK="$HOME/OneDrive"
+export ONE_NUS="$HOME/'OneDrive - National University of Singapore'"
+
 # doc_start
 alias 2r="cd $REPOS"
 alias 2.="v $REPOS/zsh/brew/nav"
@@ -17,10 +21,10 @@ alias 2ls="cd $HOME/.local/src"
 alias 2lsf="cd $HOME/.local/share/fonts"
 alias 2lb="cd $HOME/.local/bin"
 alias 2v="cd $HOME/.config/nvim"
-alias 2v.="v $ZSH_DOTS/brew/vimrc"
 alias 2vs="cd $REPOS/neovim/sessions"
 alias 2z="cd $ZSH_DOTS"
 alias 2o="cd $ONE_KCJK/KCJK"
+alias 2on="cd $ONE_NUS"
 alias 2g="cd $ONE_KCJK/KCJK/'Good Shit'" 
 alias 2m="cd $REPOS/misc"
 alias 2p="cd $HOME/Programs"
@@ -48,8 +52,9 @@ function 2,() {
 # }
 
 # to university folder
-function 2u() {
-  BASEDIR="$REPOS/uni/nightly/modules/"
+function 2mod() {
+  cd /Users/kevin/'OneDrive - National University of Singapore'/Modules
+  BASEDIR="."
 
   MODS=$(fd \
     -t d \
@@ -71,8 +76,8 @@ function 2u() {
     "")
       unset RES TARGET MODS
       return true;;
-    "home") cd $BASEDIR..;;
-    *) cd $BASEDIR$TARGET;;
+    "home") cd $BASEDIR;;
+    *) cd $BASEDIR/$TARGET;;
   esac
 
   unset RES TARGET MODS

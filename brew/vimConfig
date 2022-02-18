@@ -1,7 +1,7 @@
 #! /bin/zsh
 
-# alias vim="nvim -N -u $ZSH_DOTS/brew/vimrc"
 alias vim="nvim"
 alias v="nvim"
+export VIM_CONFIG="$HOME/.config/nvim"
 export MYVIMRC="$VIM_CONFIG/vimrc"
 export VIMINIT=":source $MYVIMRC"

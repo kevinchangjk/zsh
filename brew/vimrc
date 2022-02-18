@@ -42,6 +42,10 @@ Plug 'tomlion/vim-solidity'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'prettier/vim-prettier', {
       \'do': 'yarn install --frozen-lockfile --production' }  
+Plug 'ThePrimeagen/vim-be-good'
+Plug 'ackyshake/VimCompletesMe'
+Plug 'nvim-lualine/lualine.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
 
 call plug#end()
 
@@ -75,20 +79,23 @@ color molokai
 " status bar
 " STATUS LINE ------------------------------------------------------------ {{{
 
-" Clear status line when vimrc is reloaded.
-set statusline=
+"" Clear status line when vimrc is reloaded.
+"set statusline=
+"
+"" Status line left side.
+"set statusline+=\ %F\ %M\ %Y\ %R
+"
+"" Use a divider to separate the left side from the right side.
+"set statusline+=%=
+"
+"" Status line right side.
+"set statusline+=\ row:\ %l\ col:\ %c\ percent:\ %p%%
+"
+"" Show the status on the second to last line.
+"set laststatus=2
 
-" Status line left side.
-set statusline+=\ %F\ %M\ %Y\ %R
 
-" Use a divider to separate the left side from the right side.
-set statusline+=%=
 
-" Status line right side.
-set statusline+=\ row:\ %l\ col:\ %c\ percent:\ %p%%
-
-" Show the status on the second to last line.
-set laststatus=2
 
 " }}}
 
@@ -98,4 +105,12 @@ require'lspconfig'.bashls.setup{}
 require'lspconfig'.pyright.setup{}
 require'lspconfig'.solidity_ls.setup{}
 require'lspconfig'.java_language_server.setup{}
+require'lualine'.setup{
+  options = {
+    theme = 'codedark', 
+    icons_enabled = false,
+    component_separators = { left = '|', right = '|'},
+    section_separators = { left = '[', right = ']' }
+    }
+}
 EOF
