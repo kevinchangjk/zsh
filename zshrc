@@ -18,4 +18,6 @@ function setup() {
 }
 
 setup
-printf '\033[2J\033[3J\033[1;1H' # clears screen
+# printf '\033[2J\033[3J\033[1;1H' # clears screen
+clear -x
+py "$ZSH_DOTS/quote/quotes.py"

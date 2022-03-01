@@ -1,1 +1,0 @@
-ln -s $ZSH_DOTS/brew/vimrc $VIM_CONFIG/vimrc
