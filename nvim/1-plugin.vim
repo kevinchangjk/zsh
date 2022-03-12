@@ -24,6 +24,7 @@ Plug 'nvim-lualine/lualine.nvim'
 Plug 'ryanoasis/nerd-fonts'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'ryanoasis/vim-devicons'
+Plug 'psliwka/vim-smoothie'
 
 call plug#end()
 
