@@ -28,6 +28,7 @@ set signcolumn=yes
 " colour scheme
 set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
-color molokai
+color monokai-phoenix
+" color palenight
 highlight Normal ctermbg=none
 highlight NonText ctermbg=none
