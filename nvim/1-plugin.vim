@@ -25,7 +25,7 @@ Plug 'ryanoasis/nerd-fonts'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'ryanoasis/vim-devicons'
 Plug 'psliwka/vim-smoothie'
-Plug 'drewtempelmeyer/palenight.vim'
-
+Plug 'sainnhe/sonokai'
+ 
 call plug#end()
 
