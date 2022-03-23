@@ -15,6 +15,7 @@ alias zr="exec $SHELL -l" # reloads shell
 alias snus="ssh-copy-id kevincjk@stu.comp.nus.edu.sg"
 alias 2030n="2on; cd Modules/CS2030S/notes; git pull origin; mkdocs serve"
 alias tm="tmux"
+alias td="tmux detach"
 alias tn="tmux new -s"
 alias ts="tmux ls"
 alias ta="tmux attach-session -t"

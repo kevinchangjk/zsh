@@ -1,6 +1,8 @@
 " remaps
 let mapleader = " "
 nnoremap Y y$
+nnoremap <leader>y "+y
+vnoremap <leader>y "+y
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
